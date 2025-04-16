@@ -1,51 +1,123 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export default function Header() {
+interface HeaderProps {
+  activeSection: string;
+}
+
+export default function Header({ activeSection }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [fixed, setFixed] = useState(false);
+  
+  // Guardamos una referencia al elemento header 
+  const headerRef = useRef<HTMLDivElement>(null);
+  // Guardamos la altura para el espacio de reemplazo
+  const [headerHeight, setHeaderHeight] = useState(0);
   
   useEffect(() => {
+    // Calculamos y guardamos la altura del header
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+    
+    let initialPosition = 0;
+    let lastScrollPosition = 0;
+    let ticking = false;
+    
+    // Función para inicializar la posición de referencia
+    const initPosition = () => {
+      if (headerRef.current) {
+        initialPosition = headerRef.current.getBoundingClientRect().top + window.scrollY;
+      }
+    };
+    
+    // Inicializamos la posición después de cargar todo
+    window.addEventListener('load', initPosition);
+    
+    // También inicializamos inmediatamente por si ya está cargado
+    initPosition();
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      lastScrollPosition = window.scrollY;
+      
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Lógica base: transparencia al scrollear un poco
+          setScrolled(lastScrollPosition > 50);
+          
+          // Lógica de fijación: si pasamos la posición inicial del navbar
+          if (lastScrollPosition >= initialPosition) {
+            setFixed(true);
+          } else {
+            setFixed(false);
+          }
+          
+          ticking = false;
+        });
+        
+        ticking = true;
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', initPosition);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', initPosition);
+      window.removeEventListener('load', initPosition);
+    };
   }, []);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-white/90 dark:bg-gray-900/90 shadow-md backdrop-blur-sm py-3" : "bg-transparent py-5"
-    }`}>
-      <div className="container mx-auto flex justify-between items-center px-4">
-        <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-            Soraia
-          </h1>
+    <>
+      {/* Espacio de reemplazo cuando la navbar está fija */}
+      {fixed && <div style={{ height: `${headerHeight}px` }} />}
+      
+      <header 
+        ref={headerRef}
+        className={`w-full z-50 py-2 transition-all duration-300 bg-white ${
+          fixed 
+            ? "fixed top-0 left-0 right-0 flex justify-center" 
+            : ""
+        }`}
+      >
+        <div 
+          className={`max-w-5xl mx-auto px-6 rounded-full flex items-center justify-between ${
+            scrolled 
+              ? "bg-white border border-slate-400 "
+              : "bg-soraia-light"
+          }`}
+        >
+          <div className="flex items-center">
+            <img 
+              src="/SoraiaLogo.svg" 
+              alt="Soraia Logo" 
+              className="h-24 mr-6"
+            />
+          </div>
+          
+          <nav className="flex space-x-8 py-2">
+            {[
+              { id: 'home', label: 'Inicio' },
+              { id: 'about', label: 'Quiénes Somos' },
+              { id: 'services', label: 'Servicios' },
+              { id: 'contact', label: 'Contacto' }
+            ].map(item => (
+              <a 
+                key={item.id}
+                href={`#${item.id}`} 
+                className={`transition-colors relative ${
+                  activeSection === item.id
+                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                    : "text-soraia-dark hover:text-soraia-primary"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
-        
-        <nav className="hidden md:flex space-x-8">
-          <a href="#home" className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-            Inicio
-          </a>
-          <a href="#about" className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-            Quiénes Somos
-          </a>
-          <a href="#services" className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-            Servicios
-          </a>
-          <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-            Contacto
-          </a>
-        </nav>
-        
-        <div className="md:hidden">
-          <button className="text-gray-800 dark:text-gray-200 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
