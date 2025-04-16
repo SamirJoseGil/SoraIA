@@ -68,6 +68,23 @@ export default function Header({ activeSection }: HeaderProps) {
     };
   }, []);
 
+  // Manejador para los clics de navegación
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      // Restamos la altura del header cuando está fijo para una correcta posición
+      const offsetPosition = fixed ? targetPosition - headerHeight : targetPosition;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       {/* Espacio de reemplazo cuando la navbar está fija */}
@@ -106,6 +123,7 @@ export default function Header({ activeSection }: HeaderProps) {
               <a 
                 key={item.id}
                 href={`#${item.id}`} 
+                onClick={(e) => handleNavClick(e, item.id)}
                 className={`transition-colors relative ${
                   activeSection === item.id
                     ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
