@@ -1,4 +1,29 @@
+import { useRef } from "react";
+
 export default function Footer() {
+  // Función para manejar clics en enlaces con navegación suave
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Obtenemos la posición del elemento
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      
+      // Obtenemos la altura del header si está fijo
+      const header = document.querySelector('header') as HTMLElement;
+      const headerHeight = header?.offsetHeight || 0;
+      
+      // Calculamos la posición correcta y ajustamos por el header
+      const offsetPosition = targetPosition - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-soraia-dark text-white py-12">
       <div className="container mx-auto px-4">
@@ -28,10 +53,43 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Enlaces rápidos</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-soraia-light hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="#about" className="text-soraia-light hover:text-white transition-colors">Quiénes Somos</a></li>
-              <li><a href="#services" className="text-soraia-light hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="#contact" className="text-soraia-light hover:text-white transition-colors">Contacto</a></li>
+              {/* Actualiza los enlaces para usar handleNavClick */}
+              <li>
+                <a 
+                  href="#home" 
+                  onClick={(e) => handleNavClick(e, 'home')}
+                  className="text-soraia-light hover:text-white transition-colors"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#about" 
+                  onClick={(e) => handleNavClick(e, 'about')}
+                  className="text-soraia-light hover:text-white transition-colors"
+                >
+                  Quiénes Somos
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#services" 
+                  onClick={(e) => handleNavClick(e, 'services')}
+                  className="text-soraia-light hover:text-white transition-colors"
+                >
+                  Servicios
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleNavClick(e, 'contact')}
+                  className="text-soraia-light hover:text-white transition-colors"
+                >
+                  Contacto
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -68,20 +68,31 @@ export default function Header({ activeSection }: HeaderProps) {
     };
   }, []);
 
-  // Manejador para los clics de navegación
+  // Manejador mejorado para los clics de navegación
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    
+    // Aseguramos que obtenemos el elemento correcto
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-      // Restamos la altura del header cuando está fijo para una correcta posición
+      // Logging para depuración
+      console.log(`Navegando a sección: ${targetId}`);
+      
+      // Calculamos la posición con más precisión
+      const rect = targetElement.getBoundingClientRect();
+      const targetPosition = rect.top + window.pageYOffset;
+      
+      // Calculamos el offset basado en la altura del header
       const offsetPosition = fixed ? targetPosition - headerHeight : targetPosition;
       
+      // Smooth scroll a la posición correcta
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
+    } else {
+      console.error(`No se encontró el elemento con ID: ${targetId}`);
     }
   };
 
@@ -92,16 +103,16 @@ export default function Header({ activeSection }: HeaderProps) {
       
       <header 
         ref={headerRef}
-        className={`w-full z-50 py-2 transition-all duration-300 bg-white ${
+        className={`w-full z-50 py-2 transition-all duration-300 ${
           fixed 
-            ? "fixed top-0 left-0 right-0 flex justify-center" 
-            : ""
+            ? "fixed top-0 left-0 right-0 flex justify-center bg-white/90 backdrop-blur-sm" 
+            : "bg-transparent"
         }`}
       >
         <div 
           className={`max-w-5xl mx-auto px-6 rounded-full flex items-center justify-between ${
             scrolled 
-              ? "bg-white border border-slate-400 "
+              ? "bg-white/95 border border-slate-200 shadow-md" 
               : "bg-soraia-light"
           }`}
         >
@@ -109,7 +120,7 @@ export default function Header({ activeSection }: HeaderProps) {
             <img 
               src="/SoraiaLogo.svg" 
               alt="Soraia Logo" 
-              className="h-24 mr-6"
+              className="h-16 mr-6"
             />
           </div>
           
