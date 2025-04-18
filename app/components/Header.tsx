@@ -7,6 +7,8 @@ interface HeaderProps {
 export default function Header({ activeSection }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [fixed, setFixed] = useState(false);
+  // Estado para controlar el menú móvil
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Guardamos una referencia al elemento header 
   const headerRef = useRef<HTMLDivElement>(null);
@@ -68,33 +70,37 @@ export default function Header({ activeSection }: HeaderProps) {
     };
   }, []);
 
-  // Manejador mejorado para los clics de navegación
+  // Cerrar el menú móvil cuando se hace clic en un enlace
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     
-    // Aseguramos que obtenemos el elemento correcto
+    // Cerrar el menú móvil si está abierto
+    setMobileMenuOpen(false);
+    
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      // Logging para depuración
-      console.log(`Navegando a sección: ${targetId}`);
-      
-      // Calculamos la posición con más precisión
       const rect = targetElement.getBoundingClientRect();
       const targetPosition = rect.top + window.pageYOffset;
       
       // Calculamos el offset basado en la altura del header
       const offsetPosition = fixed ? targetPosition - headerHeight : targetPosition;
       
-      // Smooth scroll a la posición correcta
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
-    } else {
-      console.error(`No se encontró el elemento con ID: ${targetId}`);
     }
   };
+
+  // Lista de enlaces de navegación
+  const navLinks = [
+    { id: 'home', label: 'Inicio' },
+    { id: 'about', label: 'Qué Hacemos' },
+    { id: 'services', label: 'Servicios' },
+    { id: 'why-soraia', label: '¿Por qué Soraia?' },
+    { id: 'contact', label: 'Contacto' }
+  ];
 
   return (
     <>
@@ -110,7 +116,7 @@ export default function Header({ activeSection }: HeaderProps) {
         }`}
       >
         <div 
-          className={`max-w-5xl mx-auto px-6 rounded-full flex items-center justify-between ${
+          className={`container mx-auto px-4 rounded-full flex items-center justify-between ${
             scrolled 
               ? "bg-white/95 border border-slate-200 shadow-md" 
               : "bg-soraia-light"
@@ -120,18 +126,13 @@ export default function Header({ activeSection }: HeaderProps) {
             <img 
               src="/SoraiaLogo.svg" 
               alt="Soraia Logo" 
-              className="h-8 mr-6 my-4"
+              className="h-6 sm:h-7 md:h-8 my-3 sm:my-4"
             />
           </div>
           
-          <nav className="flex space-x-6 md:space-x-8 py-2">
-            {[
-              { id: 'home', label: 'Inicio' },
-              { id: 'about', label: 'Qué Hacemos' },
-              { id: 'services', label: 'Servicios' },
-              { id: 'why-soraia', label: '¿Por qué Soraia?' }, // Nueva sección
-              { id: 'contact', label: 'Contacto' }
-            ].map(item => (
+          {/* Navegación para pantallas medianas y grandes */}
+          <nav className="hidden md:flex space-x-4 lg:space-x-8 py-2">
+            {navLinks.map(item => (
               <a 
                 key={item.id}
                 href={`#${item.id}`} 
@@ -146,7 +147,48 @@ export default function Header({ activeSection }: HeaderProps) {
               </a>
             ))}
           </nav>
+          
+          {/* Botón de menú para móviles */}
+          <button 
+            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-soraia-primary"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menú de navegación"
+          >
+            {mobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+        
+        {/* Menú móvil desplegable */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg z-50 transition-all duration-300 transform animate-fade-in">
+            <div className="container mx-auto px-4 py-3">
+              <nav className="flex flex-col space-y-3">
+                {navLinks.map(item => (
+                  <a 
+                    key={item.id}
+                    href={`#${item.id}`} 
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    className={`block py-2 px-4 rounded-md transition-colors ${
+                      activeSection === item.id
+                        ? "bg-soraia-primary/10 text-soraia-primary font-bold"
+                        : "text-soraia-dark hover:bg-soraia-light hover:text-soraia-primary"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );
