@@ -120,7 +120,7 @@ export default function Header({ activeSection }: HeaderProps) {
             <img 
               src="/SoraiaLogo.svg" 
               alt="Soraia Logo" 
-              className="h-16 mr-6"
+              className="h-8 mr-6 my-4"
             />
           </div>
           
