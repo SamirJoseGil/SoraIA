@@ -105,32 +105,38 @@ export default function Index() {
 
   return (
     <div className="bg-soraia-light">
-      
+
       {/* Header */}
       <Header activeSection={activeSection} />
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-soraia-light via-soraia-accent/20 to-soraia-primary/40">
-
-        {/* Añadimos el fondo de círculos */}
-        <CirclesBackground />
-
-        <div className="absolute inset-0 flex items-center justify-center opacity-60 pointer-events-none mt-80">
-          {/* Bajamos el logo de fondo */}
-          <img
-            src="/SoraiaLogo.svg"
-            alt="Soraia Background Logo"
-            className="w-2/3 md:w-1/2 animate-pulse"
-            style={{ animationDuration: '8s' }}
-          />
+      {/* Hero Section - Reorganizado */}
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-soraia-light via-soraia-accent/10 to-soraia-primary/20">
+        {/* Círculos con mayor opacidad */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="circle-lg absolute top-1/4 left-1/5 w-64 h-64 rounded-full bg-soraia-accent/40 animate-float"></div>
+          <div className="circle-md absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full bg-soraia-primary/30 animate-float-delay"></div>
+          <div className="circle-sm absolute top-2/3 left-1/3 w-32 h-32 rounded-full bg-soraia-secondary/35 animate-float-reverse"></div>
+          <div className="circle-xs absolute top-1/2 right-1/3 w-16 h-16 rounded-full bg-soraia-accent/45 animate-float-slow"></div>
         </div>
 
         <div
           ref={heroRef}
-          className={`container relative mx-auto px-4 py-16 text-center mt-[-200px] ${heroIsVisible ? 'animate-fade-in' : 'opacity-0'}`}
+          className={`container relative mx-auto px-4 py-12 text-center ${heroIsVisible ? 'animate-fade-in' : 'opacity-0'}`}
         >
-          {/* Subimos el título, subtítulo y botón */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-soraia-primary">Transformamos ideas en software real</h1>
+          {/* Logo arriba del título como en Sense Digital */}
+          <div>
+            <img
+              src="/SoraiaLogo.svg"
+              alt="Soraia Logo"
+              className="h-32 md:h-40 mx-auto animate-float-slow opacity-20"
+              style={{ animationDuration: '12s' }}
+            />
+          </div>
+
+          {/* Contenido principal */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-soraia-primary">
+            Transformamos ideas en software real
+          </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-soraia-dark">
             Somos expertos en desarrollo y consultoría tecnológica para empresas visionarias
           </p>
