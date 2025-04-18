@@ -124,11 +124,12 @@ export default function Header({ activeSection }: HeaderProps) {
             />
           </div>
           
-          <nav className="flex space-x-8 py-2">
+          <nav className="flex space-x-6 md:space-x-8 py-2">
             {[
               { id: 'home', label: 'Inicio' },
-              { id: 'about', label: 'Quiénes Somos' },
+              { id: 'about', label: 'Qué Hacemos' },
               { id: 'services', label: 'Servicios' },
+              { id: 'why-soraia', label: '¿Por qué Soraia?' }, // Nueva sección
               { id: 'contact', label: 'Contacto' }
             ].map(item => (
               <a 
