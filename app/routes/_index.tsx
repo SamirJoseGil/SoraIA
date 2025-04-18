@@ -115,10 +115,10 @@ export default function Index() {
         {/* Añadimos el fondo de círculos */}
         <CirclesBackground />
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-80 pointer-events-none mt-80">
+        <div className="absolute inset-0 flex items-center justify-center opacity-60 pointer-events-none mt-80">
           {/* Bajamos el logo de fondo */}
           <img
-            src="/SoraiaLogo.png"
+            src="/SoraiaLogo.svg"
             alt="Soraia Background Logo"
             className="w-2/3 md:w-1/2 animate-pulse"
             style={{ animationDuration: '8s' }}
