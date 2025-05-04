@@ -33,20 +33,20 @@ export default {
           900: '#312e81',
           950: '#1e1b4b',
         },
-        // Nueva paleta de colores
+        // Darker blue theme colors
         soraia: {
-          light: '#e7eff3',
-          primary: '#4486ce',
-          dark: '#636d7c',
-          accent: '#a1c5e4',
-          secondary: '#477eb8',
+          light: '#1a1f28',       // Slightly darker background
+          primary: '#3a75b0',     // Darker blue for primary
+          secondary: '#345d8a',   // Darker secondary blue
+          dark: '#e7eff3',        // Keeping light text
+          accent: '#8ab3d8',      // Slightly darker accent blue
           neutral: '#b4b4bc',
-          muted: '#7296b5',
-          50: '#e7eff3',
-          300: '#a1c5e4',
-          500: '#4486ce',
-          700: '#477eb8',
-          900: '#636d7c',
+          muted: '#6284a3',
+          50: '#1a1f28',          // Dark base
+          300: '#8ab3d8',         // Darker accent
+          500: '#3a75b0',         // Darker primary
+          700: '#345d8a',         // Darker secondary
+          900: '#e7eff3',         // Light text
         },
       },
     },
