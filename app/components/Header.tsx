@@ -121,8 +121,8 @@ export default function Header({ activeSection }: HeaderProps) {
             }`}
         >
           <div className="flex items-center">
-            <span className="text-2xl md:text-3xl font-bold text-white my-3 sm:my-4">
-              soraia
+            <span className="text-2xl md:text-3xl mx-10 text-white my-3 sm:my-4">
+              Soraia
             </span>
           </div>
 

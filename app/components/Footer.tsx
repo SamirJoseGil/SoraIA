@@ -37,8 +37,8 @@ export default function Footer() {
           {/* Columna 1: Logo e información */}
           <div>
             <div className="mb-4">
-              <span className="text-4xl font-bold text-white">
-                soraia
+              <span className="text-4xl text-white">
+                Soraia
               </span>
             </div>
             <p className="text-soraia-dark/90">Transformamos ideas en software real.</p>

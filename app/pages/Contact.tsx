@@ -1,0 +1,109 @@
+import { useEffect, useRef, useState } from "react";
+
+// Function to check if element is in viewport
+const useIntersectionObserver = (options = {}) => {
+    const elementRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsVisible(entry.isIntersecting);
+        }, options);
+
+        const currentElement = elementRef.current;
+        if (currentElement) {
+            observer.observe(currentElement);
+        }
+
+        return () => {
+            if (currentElement) {
+                observer.unobserve(currentElement);
+            }
+        };
+    }, [options]);
+
+    return { ref: elementRef, isVisible };
+};
+
+export default function Contact() {
+    const { ref: contactRef, isVisible: contactIsVisible } = useIntersectionObserver({ threshold: 0.1 });
+
+    return (
+        <section id="contact" className="py-10 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-soraia-light">
+            {/* Add animated background circles with different configuration */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {/* Unique circles positioned differently than other sections */}
+                <div className="circle-lg absolute bottom-1/4 right-1/5 w-72 h-72 rounded-full bg-soraia-primary/15 animate-float blur-2xl"></div>
+                <div className="circle-md absolute top-1/3 left-1/4 w-56 h-56 rounded-full bg-soraia-accent/10 animate-float-delay blur-2xl"></div>
+                <div className="circle-sm absolute bottom-2/3 right-1/3 w-40 h-40 rounded-full bg-soraia-secondary/15 animate-float-reverse blur-xl"></div>
+                <div className="circle-xs absolute bottom-1/2 left-1/3 w-24 h-24 rounded-full bg-soraia-primary/20 animate-float-slow blur-xl"></div>
+
+                {/* Additional particles */}
+                <div className="absolute bottom-1/4 right-1/3 w-1 h-1 rounded-full bg-white/60 animate-ping" style={{ animationDelay: "0.5s" }}></div>
+                <div className="absolute top-1/3 left-1/2 w-1 h-1 rounded-full bg-white/60 animate-ping" style={{ animationDelay: "1.5s" }}></div>
+            </div>
+
+            <div ref={contactRef} className="container relative mx-auto px-4 z-10">
+                <div className="text-center mb-4">
+                    <div className="w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-2 rounded-full"></div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center text-white">Hagamos tu web realidad</h2>
+                    <p className="section-subtitle">
+                        ¿Listo para tener una web que de verdad represente tu marca y esté lista en tiempo récord?
+                    </p>
+                    <div className="w-24 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-6 rounded-full animate-pulse"></div>
+                </div>
+
+                <div className="max-w-2xl mx-auto mt-12">
+                    {/* Glass effect on the form container */}
+                    <div className="relative overflow-hidden backdrop-blur-md bg-gray-800/60 border border-gray-700/50 rounded-xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl group">
+                        {/* Background glow effect */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-soraia-primary/20 via-transparent to-soraia-accent/20 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+
+                        {/* Content with relative position */}
+                        <div className="relative">
+                            <form className="space-y-6">
+                                <div>
+                                    <label htmlFor="name" className="block text-soraia-dark mb-2">Nombre</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
+                                        placeholder="Tu nombre"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="email" className="block text-soraia-dark mb-2">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
+                                        placeholder="tu@email.com"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message" className="block text-soraia-dark mb-2">Mensaje</label>
+                                    <textarea
+                                        id="message"
+                                        rows={5}
+                                        className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
+                                        placeholder="¿En qué podemos ayudarte?"
+                                    ></textarea>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="relative overflow-hidden group w-full bg-soraia-primary/90 backdrop-blur-sm text-white font-bold py-3 px-6 rounded-lg hover:bg-soraia-secondary transition-colors duration-300 transform hover:scale-105"
+                                >
+                                    <span className="relative z-10">Quiero mi web</span>
+                                    <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
