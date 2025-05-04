@@ -10,7 +10,7 @@ import Hero from "~/pages/Hero";
 import Services from "~/pages/Services";
 import Because from "~/pages/Because";
 import Contact from "~/pages/Contact";
-import WhatsApp from "~/pages/Whatsapp";
+import WhatsApp from "~/pages/WhatsApp";
 
 export const meta: MetaFunction = () => {
   return [
