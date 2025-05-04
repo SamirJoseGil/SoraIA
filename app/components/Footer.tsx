@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Columna 1: Logo e información */}
           <div>
             <div className="mb-4">
-              <span className="text-4xl font-bold text-soraia-primary">
+              <span className="text-4xl font-bold text-white">
                 soraia
               </span>
             </div>

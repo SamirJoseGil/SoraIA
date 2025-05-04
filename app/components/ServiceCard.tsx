@@ -44,10 +44,15 @@ export default function ServiceCard({ title, description, icon, delay = 0 }: Ser
       {/* Background glow effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-soraia-primary/30 via-transparent to-soraia-accent/30 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
+      {/* Animated light effect */}
+      <div className="absolute inset-0 rounded-xl overflow-hidden">
+        <div className="absolute top-0 left-[-100%] h-full w-[50%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-30 animate-light-sweep pointer-events-none"></div>
+      </div>
+
       {/* Content with relative position to appear above the glow */}
       <div className="relative">
         <div className="text-soraia-primary mb-4 inline-block transform transition-all group-hover:scale-110 group-hover:text-soraia-accent">{icon}</div>
-        <h3 className="text-xl font-bold mb-3 text-soraia-primary">{title}</h3>
+        <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
         <p className="text-soraia-dark mb-6">{description}</p>
         <a href="#" className="inline-block px-6 py-2 bg-soraia-primary/80 backdrop-blur-sm text-white rounded-lg hover:bg-soraia-secondary hover:shadow-lg transition-all transform hover:scale-105">
           Saber más

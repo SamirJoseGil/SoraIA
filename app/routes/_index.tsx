@@ -140,7 +140,7 @@ export default function Index() {
             {/* Accent line above heading */}
             <div className="w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-8 rounded-full"></div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-soraia-primary leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
               Tu página web lista en <span className="text-soraia-accent">tiempo récord</span>
             </h1>
 
@@ -184,7 +184,6 @@ export default function Index() {
       <section id="about" className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="section-title">¿QUÉ HACEMOS EN SORAIA?</h2>
-          <p className="section-subtitle">No vendemos humo, vendemos resultados.</p>
 
           <div
             ref={aboutRef}
@@ -222,7 +221,7 @@ export default function Index() {
         <div ref={servicesRef} className="container relative mx-auto px-4 z-10">
           <div className="text-center mb-16">
             <div className="w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-6 rounded-full"></div>
-            <h2 className="section-title">SERVICIOS</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">SERVICIOS</h2>
             <p className="section-subtitle">Soluciones web hechas a tu medida</p>
             <div className="w-24 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-6 rounded-full animate-pulse"></div>
           </div>
@@ -282,43 +281,67 @@ export default function Index() {
           <p className="section-subtitle">Porque entendemos lo que realmente necesitas</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <div className="bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            {/* Card 1 */}
+            <div className="relative overflow-hidden bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:transform hover:scale-105 group">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 rounded-xl overflow-hidden">
+                <div className="absolute top-0 left-[-100%] h-full w-[50%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-30 animate-light-sweep pointer-events-none"></div>
+              </div>
+
+              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center relative">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-soraia-primary mb-3">Rapidez sin perder calidad</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Rapidez sin perder calidad</h3>
               <p className="text-soraia-dark">Entregamos a tiempo sin comprometer el resultado final ni el profesionalismo.</p>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            {/* Card 2 */}
+            <div className="relative overflow-hidden bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:transform hover:scale-105 group">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 rounded-xl overflow-hidden">
+                <div className="absolute top-0 left-[-100%] h-full w-[50%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-30 animate-light-sweep pointer-events-none" style={{ animationDelay: "0.7s" }}></div>
+              </div>
+
+              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center relative">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-soraia-primary mb-3">Comunicación clara</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Comunicación clara</h3>
               <p className="text-soraia-dark">Te hablamos sin tanto "tecnicismo" para que entiendas exactamente qué hacemos.</p>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            {/* Card 3 */}
+            <div className="relative overflow-hidden bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:transform hover:scale-105 group">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 rounded-xl overflow-hidden">
+                <div className="absolute top-0 left-[-100%] h-full w-[50%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-30 animate-light-sweep pointer-events-none" style={{ animationDelay: "1.4s" }}></div>
+              </div>
+
+              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center relative">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-soraia-primary mb-3">Atención al detalle</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Atención al detalle</h3>
               <p className="text-soraia-dark">Cuidamos los pequeños detalles que hacen que una web funcione y destaque.</p>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
-              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            {/* Card 4 */}
+            <div className="relative overflow-hidden bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:transform hover:scale-105 group">
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 rounded-xl overflow-hidden">
+                <div className="absolute top-0 left-[-100%] h-full w-[50%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-30 animate-light-sweep pointer-events-none" style={{ animationDelay: "2.1s" }}></div>
+              </div>
+
+              <div className="bg-soraia-primary/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center relative">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-soraia-primary mb-3">Aliados digitales</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Aliados digitales</h3>
               <p className="text-soraia-dark">No somos una agencia más: somos tu aliada digital para crecer juntos.</p>
             </div>
           </div>
@@ -343,7 +366,7 @@ export default function Index() {
         <div ref={contactRef} className="container relative mx-auto px-4 z-10">
           <div className="text-center mb-16">
             <div className="w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-6 rounded-full"></div>
-            <h2 className="section-title">Hagamos tu web realidad</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Hagamos tu web realidad</h2>
             <p className="section-subtitle">
               ¿Listo para tener una web que de verdad represente tu marca y esté lista en tiempo récord?
               <br />No lo pienses más. Hablemos y hagámoslo realidad.
@@ -407,7 +430,7 @@ export default function Index() {
       {/* WhatsApp Call-to-Action */}
       <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="section-title">¿Prefieres hablar directamente?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">¿Prefieres hablar directamente?</h2>
           <p className="section-subtitle max-w-3xl mx-auto">
             Estamos a un mensaje de distancia para responder todas tus dudas
             y ayudarte a planificar tu proyecto web.
@@ -425,9 +448,6 @@ export default function Index() {
               </svg>
               Chatea en WhatsApp
             </a>
-            <p className="text-gray-400 mt-4 text-sm">
-              Mensaje predefinido: "Hola, estoy interesada/o en crear una página web rápida y profesional con Soraia. ¿Podemos hablar? 🚀"
-            </p>
           </div>
         </div>
       </section>

@@ -52,6 +52,10 @@ body {
   .animate-bounce {
     animation: bounce 1.5s infinite;
   }
+
+  .animate-light-sweep {
+    animation: lightSweep 3s ease-in-out infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -196,9 +200,23 @@ body {
   }
 }
 
+@keyframes lightSweep {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
 /* Custom classes for sections */
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-soraia-primary;
+  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-white;
 }
 
 .section-subtitle {

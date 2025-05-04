@@ -110,18 +110,18 @@ export default function Header({ activeSection }: HeaderProps) {
       <header
         ref={headerRef}
         className={`w-full z-50 py-2 transition-all duration-300 ${fixed
-            ? "fixed top-0 left-0 right-0 flex justify-center bg-transparent"
-            : "bg-soraia-light"
+          ? "fixed top-0 left-0 right-0 flex justify-center bg-transparent"
+          : "bg-soraia-light"
           }`}
       >
         <div
           className={`container mx-auto px-4 rounded-full flex items-center justify-between ${scrolled
-              ? "bg-gray-800/80 border border-gray-700/50 backdrop-blur-md shadow-lg"
-              : "bg-soraia-light/90 backdrop-blur-sm"
+            ? "bg-gray-800/80 border border-gray-700/50 backdrop-blur-md shadow-lg"
+            : "bg-soraia-light/90 backdrop-blur-sm"
             }`}
         >
           <div className="flex items-center">
-            <span className="text-2xl md:text-3xl font-bold text-soraia-primary my-3 sm:my-4">
+            <span className="text-2xl md:text-3xl font-bold text-white my-3 sm:my-4">
               soraia
             </span>
           </div>
@@ -134,8 +134,8 @@ export default function Header({ activeSection }: HeaderProps) {
                 href={`#${item.id}`}
                 onClick={(e) => handleNavClick(e, item.id)}
                 className={`transition-colors relative ${activeSection === item.id
-                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
-                    : "text-soraia-dark hover:text-soraia-primary"
+                  ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                  : "text-soraia-dark hover:text-soraia-primary"
                   }`}
               >
                 {item.label}
@@ -172,8 +172,8 @@ export default function Header({ activeSection }: HeaderProps) {
                     href={`#${item.id}`}
                     onClick={(e) => handleNavClick(e, item.id)}
                     className={`block py-2 px-4 rounded-md transition-colors ${activeSection === item.id
-                        ? "bg-soraia-primary/20 text-soraia-primary font-bold"
-                        : "text-soraia-dark hover:bg-soraia-primary/10 hover:text-soraia-primary"
+                      ? "bg-soraia-primary/20 text-soraia-primary font-bold"
+                      : "text-soraia-dark hover:bg-soraia-primary/10 hover:text-soraia-primary"
                       }`}
                   >
                     {item.label}
