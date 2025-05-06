@@ -10,7 +10,6 @@ import Hero from "~/pages/Hero";
 import Services from "~/pages/Services";
 import Because from "~/pages/Because";
 import Contact from "~/pages/Contact";
-import WhatsApp from "~/pages/WhatsApp";
 
 export const meta: MetaFunction = () => {
   return [
@@ -154,9 +153,6 @@ export default function Index() {
 
       {/* Contact Section - with transparent background and animations */}
       <Contact />
-
-      {/* WhatsApp Call-to-Action with Modern Acrylic Design */}
-      <WhatsApp />
 
       {/* WhatsApp flotante */}
       <FloatingWhatsApp />
