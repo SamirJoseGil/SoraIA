@@ -38,37 +38,35 @@ export default function Hero() {
                 className={`container relative mx-auto px-16 py-12 z-10 ${heroIsVisible ? 'animate-fade-in' : 'opacity-0'}`}
             >
                 <div className="flex flex-col lg:flex-row items-center">
-                    {/* Left Column - Content - Now centered */}
-                    <div className="lg:w-1/2 text-center">
-                        {/* Accent line above heading - centered */}
-                        <div className="w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mb-8 rounded-full mx-auto"></div>
+                    {/* Left Column - Content - Left aligned */}
+                    <div className="lg:w-1/2 text-left">
+                        {/* Accent line above heading - left aligned */}
+                        <div className="w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mb-8 rounded-full"></div>
 
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
                             Tu página web lista en <span className="text-soraia-accent">tiempo récord</span>
                         </h1>
 
-                        {/* Animated underline - centered */}
-                        <div className="w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse mx-auto"></div>
+                        {/* Animated underline - left aligned */}
+                        <div className="w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse"></div>
 
-                        <p className="text-xl md:text-2xl mb-12 text-soraia-dark max-w-xl mx-auto leading-relaxed backdrop-blur-sm py-4 px-6 rounded-xl">
+                        <p className="text-xl md:text-2xl mb-12 text-soraia-dark max-w-xl leading-relaxed backdrop-blur-sm py-4 px-6 rounded-xl">
                             En Soraia diseñamos y desarrollamos sitios web, landing pages y marketplaces
                             con rapidez, estrategia y estilo. Sabemos lo valioso que es tu tiempo, por eso
                             hacemos que tu proyecto esté en línea… antes de lo que imaginas.
                         </p>
 
-                        {/* Centered CTA button */}
-                        <div className="flex justify-center">
-                            <a
-                                href="#contact"
-                                className="relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-300 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center"
-                            >
-                                <span className="relative z-10">Solicita asesoría</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                                <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
-                            </a>
-                        </div>
+                        {/* Left-aligned CTA button (removed flex justify-center wrapper) */}
+                        <a
+                            href="#contact"
+                            className="relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-300 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center"
+                        >
+                            <span className="relative z-10">Solicita asesoría</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                            <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
+                        </a>
                     </div>
 
                     {/* Right Column - Image without background */}
