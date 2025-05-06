@@ -50,7 +50,7 @@ export default function Hero() {
                         {/* Animated underline - left aligned */}
                         <div className="w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse"></div>
 
-                        <p className="text-xl md:text-2xl mb-12 text-soraia-dark max-w-xl leading-relaxed backdrop-blur-sm py-4 px-6 rounded-xl">
+                        <p className="text-lg md:text-lg mb-12 text-soraia-dark max-w-xl leading-relaxed backdrop-blur-sm rounded-xl">
                             En Soraia diseñamos y desarrollamos sitios web, landing pages y marketplaces
                             con rapidez, estrategia y estilo. Sabemos lo valioso que es tu tiempo, por eso
                             hacemos que tu proyecto esté en línea… antes de lo que imaginas.
