@@ -1,0 +1,136 @@
+{
+    "common": {
+        "back": "Volver",
+        "contact": "Contacto",
+        "readMore": "Leer más",
+        "viewAll": "Ver todos"
+    },
+    "navbar": {
+        "home": "Inicio",
+        "about": "Qué Hacemos",
+        "services": "Servicios",
+        "whySoraia": "¿Por qué Soraia?",
+        "contact": "Contacto",
+        "catalog": "Catálogo"
+    },
+    "hero": {
+        "title": "Tu página web lista en tiempo récord",
+        "subtitle": "Diseñamos y desarrollamos sitios web, landing pages y marketplaces con rapidez, estrategia y estilo",
+        "ctaButton": "Comienza ahora"
+    },
+    "about": {
+        "title": "¿Qué Hacemos?",
+        "subtitle": "En Soraia transformamos ideas en experiencias digitales impactantes",
+        "description": "Ofrecemos soluciones digitales adaptadas a tus necesidades, combinando diseño creativo y tecnología de vanguardia para potenciar tu presencia online.",
+        "item1": {
+            "title": "Diseño web a medida",
+            "description": "Creamos sitios únicos que reflejan tu marca y conectan con tu audiencia"
+        },
+        "item2": {
+            "title": "Desarrollo ágil",
+            "description": "Implementamos soluciones funcionales con las últimas tecnologías en tiempo récord"
+        },
+        "item3": {
+            "title": "Estrategia digital",
+            "description": "Definimos el enfoque ideal para maximizar el impacto de tu presencia online"
+        }
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "subtitle": "Soluciones digitales completas para tu negocio con precios transparentes",
+        "viewMore": "Ver todos los servicios y precios",
+        "basic": {
+            "title": "Plan Básico",
+            "name": "Sitio Web Informativo",
+            "description": "Ideal para presentar tu negocio o marca con un sitio web profesional y responsive",
+            "priceRange": "$200 a $500",
+            "maintenance": "Opción de mantenimiento y gestión: $120 adicionales/mes"
+        },
+        "intermediate": {
+            "title": "Plan Intermedio",
+            "name": "Sitio Web Dinámico",
+            "description": "Solución completa para negocios que requieren funcionalidades avanzadas e interacción con usuarios",
+            "priceRange": "$500 a $1,200",
+            "maintenance": "Opción de mantenimiento y gestión: $120 adicionales/mes"
+        },
+        "pro": {
+            "title": "Plan Pro",
+            "name": "Solución Digital Completa",
+            "description": "La solución definitiva para negocios que necesitan una presencia digital integral y personalizada",
+            "priceRange": "Más de $1,200",
+            "maintenance": "Incluye mantenimiento y gestión sin costo adicional",
+            "contactButton": "Contáctanos para más detalles"
+        },
+        "additional": {
+            "title": "Más Servicios",
+            "maintenance": {
+                "title": "Mantenimiento web",
+                "description": "Mantén tu sitio web actualizado, seguro y funcionando sin problemas con nuestro servicio de mantenimiento mensual",
+                "price": "$120/mes"
+            },
+            "seo": {
+                "title": "SEO y Marketing Digital",
+                "description": "Mejora la visibilidad de tu sitio web en los motores de búsqueda y aumenta tu tráfico orgánico",
+                "price": "$120/mes"
+            }
+        },
+        "webSite": {
+            "title": "Sitios Web",
+            "description": "Diseñamos y desarrollamos sitios web únicos, responsivos y optimizados para SEO"
+        },
+        "landingPages": {
+            "title": "Landing Pages",
+            "description": "Páginas de alto impacto diseñadas para convertir visitantes en clientes"
+        },
+        "ecommerce": {
+            "title": "E-commerce",
+            "description": "Tiendas online completas con gestión de inventario y pasarelas de pago"
+        }
+    },
+    "because": {
+        "title": "¿Por qué Soraia?",
+        "subtitle": "Nos destacamos por nuestra metodología ágil y resultados excepcionales",
+        "point1": {
+            "title": "Rapidez",
+            "description": "Entregas en tiempo récord sin sacrificar calidad"
+        },
+        "point2": {
+            "title": "Calidad",
+            "description": "Diseño premium y código limpio que garantiza un rendimiento óptimo"
+        },
+        "point3": {
+            "title": "Transparencia",
+            "description": "Precios claros y comunicación constante durante todo el proyecto"
+        },
+        "point4": {
+            "title": "Soporte",
+            "description": "Acompañamiento continuo y soluciones de mantenimiento post-lanzamiento"
+        }
+    },
+    "contact": {
+        "title": "Contáctanos",
+        "subtitle": "¿Listo para dar vida a tu proyecto? Escríbenos y comencemos a trabajar juntos",
+        "nameLabel": "Nombre",
+        "namePlaceholder": "Tu nombre",
+        "emailLabel": "Email",
+        "emailPlaceholder": "tucorreo@ejemplo.com",
+        "messageLabel": "Mensaje",
+        "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+        "submitButton": "Enviar mensaje",
+        "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+        "error": "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo."
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados",
+        "navigation": "Navegación",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "follow": "Síguenos",
+        "madeWith": "Hecho con",
+        "by": "por"
+    },
+    "servicesPage": {
+        "title": "Nuestros Servicios y Precios",
+        "subtitle": "Soluciones digitales completas para tu negocio con precios transparentes y adaptados a tus necesidades"
+    }
+}

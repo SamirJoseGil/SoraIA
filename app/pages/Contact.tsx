@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "~/i18n/context";
 
 // Function to check if element is in viewport
 const useIntersectionObserver = (options = {}) => {
@@ -27,9 +28,12 @@ const useIntersectionObserver = (options = {}) => {
 
 export default function Contact() {
     const { ref: contactRef, isVisible: contactIsVisible } = useIntersectionObserver({ threshold: 0.1 });
+    const { t } = useLanguage();
 
     // Estado para controlar las animaciones secuenciales
     const [animationsStarted, setAnimationsStarted] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
 
     // Efecto para iniciar las animaciones cuando el componente sea visible
     useEffect(() => {
@@ -37,6 +41,25 @@ export default function Contact() {
             setAnimationsStarted(true);
         }
     }, [contactIsVisible]);
+
+    // Si tienes una función de envío de formulario, asegúrate de actualizar estas variables
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        try {
+            // Tu lógica de envío de formulario actual
+            // ...
+
+            // Al completarse exitosamente:
+            setSuccess(true);
+            setError(false);
+            // Si deseas, puedes limpiar el formulario aquí
+        } catch (err) {
+            setError(true);
+            setSuccess(false);
+            console.error("Error al enviar el formulario:", err);
+        }
+    };
 
     return (
         <section id="contact" className="py-10 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-soraia-light">
@@ -82,14 +105,14 @@ export default function Contact() {
                         className={`text-3xl md:text-4xl font-bold mb-2 text-center text-white transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
-                        Hagamos tu web realidad
+                        {t('contact.title')}
                     </h2>
 
                     <p
                         className={`section-subtitle transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                         style={{ transitionDelay: '600ms' }}
                     >
-                        ¿Listo para tener una web que de verdad represente tu marca y esté lista en tiempo récord?
+                        {t('contact.subtitle')}
                     </p>
 
                     <div
@@ -109,17 +132,18 @@ export default function Contact() {
 
                         {/* Content with relative position */}
                         <div className="relative">
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div
                                     className={`transition-all duration-700 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                     style={{ transitionDelay: '900ms' }}
                                 >
-                                    <label htmlFor="name" className="block text-soraia-dark mb-2">Nombre</label>
+                                    <label htmlFor="name" className="block text-soraia-dark mb-2">{t('contact.nameLabel')}</label>
                                     <input
                                         type="text"
                                         id="name"
+                                        name="name"
                                         className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
-                                        placeholder="Tu nombre"
+                                        placeholder={t('contact.namePlaceholder')}
                                     />
                                 </div>
 
@@ -127,12 +151,13 @@ export default function Contact() {
                                     className={`transition-all duration-700 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                     style={{ transitionDelay: '1000ms' }}
                                 >
-                                    <label htmlFor="email" className="block text-soraia-dark mb-2">Email</label>
+                                    <label htmlFor="email" className="block text-soraia-dark mb-2">{t('contact.emailLabel')}</label>
                                     <input
                                         type="email"
                                         id="email"
+                                        name="email"
                                         className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
-                                        placeholder="tu@email.com"
+                                        placeholder={t('contact.emailPlaceholder')}
                                     />
                                 </div>
 
@@ -140,12 +165,13 @@ export default function Contact() {
                                     className={`transition-all duration-700 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                     style={{ transitionDelay: '1100ms' }}
                                 >
-                                    <label htmlFor="message" className="block text-soraia-dark mb-2">Mensaje</label>
+                                    <label htmlFor="message" className="block text-soraia-dark mb-2">{t('contact.messageLabel')}</label>
                                     <textarea
                                         id="message"
+                                        name="message"
                                         rows={5}
                                         className="w-full px-4 py-3 rounded-lg bg-gray-700/70 backdrop-blur-sm border border-gray-600/80 focus:outline-none focus:ring-2 focus:ring-soraia-primary text-soraia-dark"
-                                        placeholder="¿En qué podemos ayudarte?"
+                                        placeholder={t('contact.messagePlaceholder')}
                                     ></textarea>
                                 </div>
 
@@ -157,10 +183,14 @@ export default function Contact() {
                                         type="submit"
                                         className="relative overflow-hidden group w-full bg-soraia-primary/90 backdrop-blur-sm text-white font-bold py-3 px-6 rounded-lg hover:bg-soraia-secondary transition-colors duration-300 transform hover:scale-105"
                                     >
-                                        <span className="relative z-10">Quiero mi web</span>
+                                        <span className="relative z-10">{t('contact.submitButton')}</span>
                                         <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
                                     </button>
                                 </div>
+
+                                {/* Success/error messages */}
+                                {success && <p className="text-green-400 mt-4">{t('contact.success')}</p>}
+                                {error && <p className="text-red-400 mt-4">{t('contact.error')}</p>}
                             </form>
                         </div>
                     </div>

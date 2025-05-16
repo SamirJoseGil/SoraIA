@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ServiceCard from "~/components/ServiceCard";
+import { Link } from "@remix-run/react";
+import { useLanguage } from "~/i18n/context";
 
 // Function to check if element is in viewport
 const useIntersectionObserver = (options = {}) => {
@@ -28,6 +30,7 @@ const useIntersectionObserver = (options = {}) => {
 
 export default function Services() {
     const { ref: servicesRef, isVisible: servicesIsVisible } = useIntersectionObserver({ threshold: 0.1 });
+    const { t } = useLanguage();
 
     // Estado para controlar las animaciones secuenciales
     const [animationsStarted, setAnimationsStarted] = useState(false);
@@ -72,15 +75,14 @@ export default function Services() {
                         className={`text-3xl md:text-4xl font-bold mb-6 text-center text-white transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
-                        SERVICIOS
+                        {t('services.title')}
                     </h2>
 
                     <p
                         className={`text-gray-300 mb-10 max-w-2xl mx-auto text-sm md:text-base transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                         style={{ transitionDelay: '600ms' }}
                     >
-                        Ofrecemos soluciones web hechas a tu medida, con enfoque en la calidad,
-                        velocidad de entrega y resultados que transforman tu presencia digital.
+                        {t('services.subtitle')}
                     </p>
 
                     {/* Animated divider */}
@@ -96,8 +98,8 @@ export default function Services() {
                     style={{ transitionDelay: '900ms' }}
                 >
                     <ServiceCard
-                        title="Páginas Web Personalizadas"
-                        description="Tu carta de presentación digital. Creamos sitios con diseño único, optimizados para cualquier pantalla y pensados para destacar."
+                        title={t('services.webSite.title')}
+                        description={t('services.webSite.description')}
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -108,8 +110,8 @@ export default function Services() {
                     />
 
                     <ServiceCard
-                        title="Landing Pages que convierten"
-                        description="¿Tienes una campaña, un producto o servicio que quieres impulsar? Creamos páginas que atrapan la atención y guían al usuario a tomar acción."
+                        title={t('services.landingPages.title')}
+                        description={t('services.landingPages.description')}
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -120,8 +122,8 @@ export default function Services() {
                     />
 
                     <ServiceCard
-                        title="Marketplaces & Tiendas Online"
-                        description="¿Quieres vender en línea? Diseñamos y desarrollamos plataformas de e-commerce funcionales, seguras y fáciles de usar."
+                        title={t('services.ecommerce.title')}
+                        description={t('services.ecommerce.description')}
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -149,6 +151,18 @@ export default function Services() {
                     className={`w-20 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-16 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
                     style={{ transitionDelay: '1200ms' }}
                 ></div>
+
+                <div className="flex justify-center mt-12">
+                    <Link
+                        to="/servicios"
+                        className="px-6 py-3 bg-white/10 backdrop-blur-md rounded-lg text-white font-medium hover:bg-white/20 transition-all flex items-center group animate-button-glow"
+                    >
+                        <span>{t('services.viewMore')}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                    </Link>
+                </div>
             </div>
         </section>
     )

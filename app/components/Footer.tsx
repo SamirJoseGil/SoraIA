@@ -1,6 +1,9 @@
 import { useRef } from "react";
+import { useLanguage } from "~/i18n/context";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   // Función para manejar clics en enlaces con navegación suave
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -23,6 +26,8 @@ export default function Footer() {
       });
     }
   };
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative overflow-hidden bg-gray-900 py-12">
@@ -68,7 +73,7 @@ export default function Footer() {
 
           {/* Columna 2: Enlaces rápidos */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">Enlaces rápidos</h3>
+            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -76,7 +81,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'home')}
                   className="text-soraia-dark/80 hover:text-soraia-accent transition-colors"
                 >
-                  Inicio
+                  {t('navbar.home')}
                 </a>
               </li>
               <li>
@@ -85,7 +90,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'about')}
                   className="text-soraia-dark/80 hover:text-soraia-accent transition-colors"
                 >
-                  Qué Hacemos
+                  {t('navbar.about')}
                 </a>
               </li>
               <li>
@@ -94,7 +99,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'services')}
                   className="text-soraia-dark/80 hover:text-soraia-accent transition-colors"
                 >
-                  Servicios
+                  {t('navbar.services')}
                 </a>
               </li>
               <li>
@@ -103,7 +108,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'why-soraia')}
                   className="text-soraia-dark/80 hover:text-soraia-accent transition-colors"
                 >
-                  ¿Por qué Soraia?
+                  {t('navbar.whySoraia')}
                 </a>
               </li>
               <li>
@@ -112,7 +117,7 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'contact')}
                   className="text-soraia-dark/80 hover:text-soraia-accent transition-colors"
                 >
-                  Contacto
+                  {t('navbar.contact')}
                 </a>
               </li>
             </ul>
@@ -120,7 +125,7 @@ export default function Footer() {
 
           {/* Nueva columna 3: Información de contacto */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">Contacto</h3>
+            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">{t('footer.contact')}</h3>
             <div className="space-y-3">
               <div className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-soraia-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -155,7 +160,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700/50 mt-8 pt-8 text-center">
-          <p className="text-soraia-dark/70">&copy; {new Date().getFullYear()} Soraia. Todos los derechos reservados.</p>
+          <p className="text-soraia-dark/70">&copy; {currentYear} Soraia. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,136 @@
+{
+    "common": {
+        "back": "Back",
+        "contact": "Contact",
+        "readMore": "Read more",
+        "viewAll": "View all"
+    },
+    "navbar": {
+        "home": "Home",
+        "about": "What We Do",
+        "services": "Services",
+        "whySoraia": "Why Soraia?",
+        "contact": "Contact",
+        "catalog": "Catalog"
+    },
+    "hero": {
+        "title": "Your website ready in record time",
+        "subtitle": "We design and develop websites, landing pages and marketplaces with speed, strategy and style",
+        "ctaButton": "Get started now"
+    },
+    "about": {
+        "title": "What We Do",
+        "subtitle": "At Soraia we transform ideas into impactful digital experiences",
+        "description": "We offer digital solutions tailored to your needs, combining creative design and cutting-edge technology to enhance your online presence.",
+        "item1": {
+            "title": "Custom web design",
+            "description": "We create unique sites that reflect your brand and connect with your audience"
+        },
+        "item2": {
+            "title": "Agile development",
+            "description": "We implement functional solutions with the latest technologies in record time"
+        },
+        "item3": {
+            "title": "Digital strategy",
+            "description": "We define the ideal approach to maximize the impact of your online presence"
+        }
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Complete digital solutions for your business with transparent pricing",
+        "viewMore": "View all services and pricing",
+        "basic": {
+            "title": "Basic Plan",
+            "name": "Informational Website",
+            "description": "Ideal for presenting your business or brand with a professional and responsive website",
+            "priceRange": "$200 to $500",
+            "maintenance": "Maintenance and management option: additional $120/month"
+        },
+        "intermediate": {
+            "title": "Intermediate Plan",
+            "name": "Dynamic Website",
+            "description": "Complete solution for businesses that require advanced features and user interaction",
+            "priceRange": "$500 to $1,200",
+            "maintenance": "Maintenance and management option: additional $120/month"
+        },
+        "pro": {
+            "title": "Pro Plan",
+            "name": "Complete Digital Solution",
+            "description": "The ultimate solution for businesses that need a comprehensive and personalized digital presence",
+            "priceRange": "More than $1,200",
+            "maintenance": "Includes maintenance and management at no additional cost",
+            "contactButton": "Contact us for more details"
+        },
+        "additional": {
+            "title": "More Services",
+            "maintenance": {
+                "title": "Website Maintenance",
+                "description": "Keep your website updated, secure and running smoothly with our monthly maintenance service",
+                "price": "$120/month"
+            },
+            "seo": {
+                "title": "SEO & Digital Marketing",
+                "description": "Improve the visibility of your website in search engines and increase your organic traffic",
+                "price": "$120/month"
+            }
+        },
+        "webSite": {
+            "title": "Websites",
+            "description": "We design and develop unique, responsive and SEO-optimized websites"
+        },
+        "landingPages": {
+            "title": "Landing Pages",
+            "description": "High-impact pages designed to convert visitors into customers"
+        },
+        "ecommerce": {
+            "title": "E-commerce",
+            "description": "Complete online stores with inventory management and payment gateways"
+        }
+    },
+    "because": {
+        "title": "Why Soraia?",
+        "subtitle": "We stand out for our agile methodology and exceptional results",
+        "point1": {
+            "title": "Speed",
+            "description": "Record-time deliveries without sacrificing quality"
+        },
+        "point2": {
+            "title": "Quality",
+            "description": "Premium design and clean code that ensures optimal performance"
+        },
+        "point3": {
+            "title": "Transparency",
+            "description": "Clear pricing and constant communication throughout the project"
+        },
+        "point4": {
+            "title": "Support",
+            "description": "Continuous assistance and post-launch maintenance solutions"
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Ready to bring your project to life? Write to us and let's start working together",
+        "nameLabel": "Name",
+        "namePlaceholder": "Your name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "your@email.com",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Tell us about your project...",
+        "submitButton": "Send message",
+        "success": "Message sent successfully! We will contact you soon.",
+        "error": "There was an error sending the message. Please try again."
+    },
+    "footer": {
+        "rights": "All rights reserved",
+        "navigation": "Navigation",
+        "services": "Services",
+        "contact": "Contact",
+        "follow": "Follow us",
+        "madeWith": "Made with",
+        "by": "by"
+    },
+    "servicesPage": {
+        "title": "Our Services and Pricing",
+        "subtitle": "Complete digital solutions for your business with transparent prices tailored to your needs"
+    }
+}

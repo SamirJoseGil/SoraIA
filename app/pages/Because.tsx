@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "~/i18n/context";
 
 // Function to check if element is in viewport
 const useIntersectionObserver = (options = {}) => {
@@ -26,6 +27,7 @@ const useIntersectionObserver = (options = {}) => {
 };
 
 export default function Because() {
+    const { t } = useLanguage();
     const { ref: whySoraiaRef, isVisible: whySoraiaIsVisible } = useIntersectionObserver({ threshold: 0.1 });
 
     // Estado para controlar las animaciones secuenciales
@@ -81,14 +83,14 @@ export default function Because() {
                         className={`text-3xl md:text-4xl font-bold mb-6 text-center text-white transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
-                        ¿POR QUÉ SORAIA?
+                        {t('because.title')}
                     </h2>
 
                     <p
                         className={`text-gray-300 mb-10 max-w-2xl mx-auto text-sm md:text-base transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                         style={{ transitionDelay: '600ms' }}
                     >
-                        Porque entendemos lo que realmente necesitas
+                        {t('because.subtitle')}
                     </p>
 
                     <div
@@ -115,8 +117,8 @@ export default function Because() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-semibold text-white mb-3">Rapidez sin perder calidad</h3>
-                            <p className="text-soraia-dark">Entregamos a tiempo sin comprometer el resultado final ni el profesionalismo.</p>
+                            <h3 className="text-lg font-semibold text-white mb-3">{t('because.point1.title')}</h3>
+                            <p className="text-soraia-dark">{t('because.point1.description')}</p>
                         </div>
                     </div>
 
@@ -137,8 +139,8 @@ export default function Because() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-semibold text-white mb-3">Comunicación clara</h3>
-                            <p className="text-soraia-dark">Te hablamos sin tanto "tecnicismo" para que entiendas exactamente qué hacemos.</p>
+                            <h3 className="text-lg font-semibold text-white mb-3">{t('because.point2.title')}</h3>
+                            <p className="text-soraia-dark">{t('because.point2.description')}</p>
                         </div>
                     </div>
 
@@ -159,8 +161,8 @@ export default function Because() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-semibold text-white mb-3">Atención al detalle</h3>
-                            <p className="text-soraia-dark">Cuidamos los pequeños detalles que hacen que una web funcione y destaque.</p>
+                            <h3 className="text-lg font-semibold text-white mb-3">{t('because.point3.title')}</h3>
+                            <p className="text-soraia-dark">{t('because.point3.description')}</p>
                         </div>
                     </div>
 
@@ -181,8 +183,8 @@ export default function Because() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-lg font-semibold text-white mb-3">Aliados digitales</h3>
-                            <p className="text-soraia-dark">No somos una agencia más: somos tu aliada digital para crecer juntos.</p>
+                            <h3 className="text-lg font-semibold text-white mb-3">{t('because.point4.title')}</h3>
+                            <p className="text-soraia-dark">{t('because.point4.description')}</p>
                         </div>
                     </div>
                 </div>

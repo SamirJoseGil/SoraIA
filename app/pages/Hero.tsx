@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import CirclesBackground from "~/components/CirclesBackground";
+import { useLanguage } from "~/i18n/context";
 
 // Function to check if element is in viewport
 const useIntersectionObserver = (options = {}) => {
@@ -28,6 +29,7 @@ const useIntersectionObserver = (options = {}) => {
 
 export default function Hero() {
     const { ref: heroRef, isVisible: heroIsVisible } = useIntersectionObserver({ threshold: 0.1 });
+    const { t } = useLanguage();
 
     // Estado para controlar las animaciones secuenciales
     const [animationsStarted, setAnimationsStarted] = useState(false);
@@ -61,7 +63,7 @@ export default function Hero() {
                             className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '400ms' }}
                         >
-                            Tu página web lista en <span className="text-soraia-accent">tiempo récord</span>
+                            {t('hero.title')}
                         </h1>
 
                         {/* Animated underline - left aligned */}
@@ -74,9 +76,7 @@ export default function Hero() {
                             className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-xl leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '800ms' }}
                         >
-                            En Soraia diseñamos y desarrollamos sitios web, landing pages y marketplaces
-                            con rapidez, estrategia y estilo. Sabemos lo valioso que es tu tiempo, por eso
-                            hacemos que tu proyecto esté en línea… antes de lo que imaginas.
+                            {t('hero.subtitle')}
                         </p>
 
                         {/* Left-aligned CTA button with animation */}
@@ -85,7 +85,7 @@ export default function Hero() {
                             className={`relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-1000 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '1000ms' }}
                         >
-                            <span className="relative z-10">Solicita asesoría</span>
+                            <span className="relative z-10">{t('hero.ctaButton')}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>

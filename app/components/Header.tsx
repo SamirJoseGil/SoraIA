@@ -1,10 +1,14 @@
+import { Link } from "@remix-run/react";
 import { useState, useEffect, useRef } from "react";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "~/i18n/context";
 
 interface HeaderProps {
   activeSection: string;
 }
 
 export default function Header({ activeSection }: HeaderProps) {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [fixed, setFixed] = useState(false);
   // Estado para controlar el menú móvil
@@ -93,18 +97,19 @@ export default function Header({ activeSection }: HeaderProps) {
     }
   };
 
-  // Lista de enlaces de navegación
+  // Lista de enlaces de navegación con traducciones
   const navLinks = [
-    { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Qué Hacemos' },
-    { id: 'services', label: 'Servicios' },
-    { id: 'why-soraia', label: '¿Por qué Soraia?' },
-    { id: 'contact', label: 'Contacto' }
+    { id: 'home', label: t('navbar.home') },
+    { id: 'about', label: t('navbar.about') },
+    { id: 'services', label: t('navbar.services') },
+    { id: 'why-soraia', label: t('navbar.whySoraia') },
+    { id: 'contact', label: t('navbar.contact') },
+    { id: 'servicios', label: t('navbar.catalog'), href: '/servicios' }
   ];
 
   return (
     <>
-      {/* Espacio de reemplazo cuando la navbar está fija - ahora con el color de fondo correcto */}
+      {/* Espacio de reemplazo cuando la navbar está fija */}
       {fixed && <div className="bg-soraia-light" style={{ height: `${headerHeight}px` }} />}
 
       <header
@@ -127,20 +132,36 @@ export default function Header({ activeSection }: HeaderProps) {
           </div>
 
           {/* Navegación para pantallas medianas y grandes */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-8 py-2">
+          <nav className="hidden md:flex space-x-4 lg:space-x-8 py-2 items-center">
             {navLinks.map(item => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => handleNavClick(e, item.id)}
-                className={`transition-colors relative ${activeSection === item.id
-                  ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
-                  : "text-soraia-dark hover:text-soraia-primary"
-                  }`}
-              >
-                {item.label}
-              </a>
+              item.href ? (
+                <Link
+                  key={item.id}
+                  to={item.href}
+                  className={`transition-colors relative ${activeSection === item.id
+                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                    : "text-soraia-dark hover:text-soraia-primary"
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`transition-colors relative ${activeSection === item.id
+                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                    : "text-soraia-dark hover:text-soraia-primary"
+                    }`}
+                >
+                  {item.label}
+                </a>
+              )
             ))}
+
+            {/* Agregar el selector de idioma */}
+            <LanguageSelector />
           </nav>
 
           {/* Botón de menú para móviles */}
@@ -167,18 +188,36 @@ export default function Header({ activeSection }: HeaderProps) {
             <div className="container mx-auto px-4 py-3">
               <nav className="flex flex-col space-y-3">
                 {navLinks.map(item => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={(e) => handleNavClick(e, item.id)}
-                    className={`block py-2 px-4 rounded-md transition-colors ${activeSection === item.id
-                      ? "bg-soraia-primary/20 text-soraia-primary font-bold"
-                      : "text-soraia-dark hover:bg-soraia-primary/10 hover:text-soraia-primary"
-                      }`}
-                  >
-                    {item.label}
-                  </a>
+                  item.href ? (
+                    <Link
+                      key={item.id}
+                      to={item.href}
+                      className={`block py-2 px-4 rounded-md transition-colors ${activeSection === item.id
+                        ? "bg-soraia-primary/20 text-soraia-primary font-bold"
+                        : "text-soraia-dark hover:bg-soraia-primary/10 hover:text-soraia-primary"
+                        }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => handleNavClick(e, item.id)}
+                      className={`block py-2 px-4 rounded-md transition-colors ${activeSection === item.id
+                        ? "bg-soraia-primary/20 text-soraia-primary font-bold"
+                        : "text-soraia-dark hover:bg-soraia-primary/10 hover:text-soraia-primary"
+                        }`}
+                    >
+                      {item.label}
+                    </a>
+                  )
                 ))}
+
+                {/* Agregar selector de idioma para móvil */}
+                <div className="py-2 px-4">
+                  <LanguageSelector />
+                </div>
               </nav>
             </div>
           </div>

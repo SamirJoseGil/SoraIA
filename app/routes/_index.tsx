@@ -126,6 +126,17 @@ export default function Index() {
       .animate-fade-in {
         animation: fadeIn 0.8s ease-out forwards;
       }
+      
+      /* Button hover animation */
+      @keyframes buttonGlow {
+        0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+        100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+      }
+      
+      .animate-button-glow {
+        animation: buttonGlow 2s ease-in-out infinite;
+      }
     `;
     document.head.appendChild(style);
 
