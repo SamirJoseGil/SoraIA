@@ -45,7 +45,7 @@ export default function LanguageSelector() {
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-36 rounded-md shadow-lg bg-white/10 backdrop-blur-md border border-white/20 overflow-hidden transition-all transform origin-top-right animate-fade-in z-50">
+                <div className="absolute right-0 mt-2 w-36 rounded-md shadow-lg bg-white/5 backdrop-blur-sm border border-white/20 overflow-hidden transition-all transform origin-top-right animate-fade-in z-50">
                     <div className="py-1">
                         {LANGUAGES.map((lang) => (
                             <button
@@ -55,7 +55,7 @@ export default function LanguageSelector() {
                                     setIsOpen(false);
                                 }}
                                 className={`w-full text-left px-4 py-2 text-sm flex items-center space-x-2 transition-colors duration-200 
-                  ${language === lang.code ? 'bg-white/20 text-white' : 'text-gray-200 hover:bg-white/10'}`}
+                  ${language === lang.code ? 'bg-white-20 text-white' : 'text-gray-200 hover:bg-white/10'}`}
                             >
                                 <span className="text-lg">{lang.flag}</span>
                                 <span>{lang.name}</span>

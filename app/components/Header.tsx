@@ -131,55 +131,64 @@ export default function Header({ activeSection }: HeaderProps) {
             </span>
           </div>
 
-          {/* Navegación para pantallas medianas y grandes */}
-          <nav className="hidden md:flex space-x-4 lg:space-x-8 py-2 items-center">
-            {navLinks.map(item => (
-              item.href ? (
-                <Link
-                  key={item.id}
-                  to={item.href}
-                  className={`transition-colors relative ${activeSection === item.id
-                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
-                    : "text-soraia-dark hover:text-soraia-primary"
-                    }`}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  className={`transition-colors relative ${activeSection === item.id
-                    ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
-                    : "text-soraia-dark hover:text-soraia-primary"
-                    }`}
-                >
-                  {item.label}
-                </a>
-              )
-            ))}
+          <div>
+            {/* Navegación para pantallas medianas y grandes */}
+            <nav className="hidden md:flex space-x-4 lg:space-x-8 py-2 items-center">
+              {navLinks.map(item => (
+                item.href ? (
+                  <Link
+                    key={item.id}
+                    to={item.href}
+                    className={`transition-colors relative ${activeSection === item.id
+                      ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                      : "text-soraia-dark hover:text-soraia-primary"
+                      }`}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    className={`transition-colors relative ${activeSection === item.id
+                      ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
+                      : "text-soraia-dark hover:text-soraia-primary"
+                      }`}
+                  >
+                    {item.label}
+                  </a>
+                )
+              ))}
 
-            {/* Agregar el selector de idioma */}
-            <LanguageSelector />
-          </nav>
+              {/* Agregar el selector de idioma */}
+              <LanguageSelector />
+            </nav>
 
-          {/* Botón de menú para móviles */}
-          <button
-            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-soraia-primary"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menú de navegación"
-          >
-            {mobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+            <div className="flex">
+              {/* Botón de menú para móviles */}
+              <button
+                className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-soraia-primary"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Menú de navegación"
+              >
+                {mobileMenuOpen ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-soraia-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+
+              {/* Agregar selector de idioma visible solo para móvil */}
+              <div className="md:hidden">
+                <LanguageSelector />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Menú móvil desplegable */}
@@ -213,16 +222,11 @@ export default function Header({ activeSection }: HeaderProps) {
                     </a>
                   )
                 ))}
-
-                {/* Agregar selector de idioma para móvil */}
-                <div className="py-2 px-4">
-                  <LanguageSelector />
-                </div>
               </nav>
             </div>
           </div>
         )}
-      </header>
+      </header >
     </>
   );
 }
