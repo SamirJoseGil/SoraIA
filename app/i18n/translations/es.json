@@ -15,24 +15,24 @@
     },
     "hero": {
         "title": "Tu página web lista en tiempo récord",
-        "subtitle": "Diseñamos y desarrollamos sitios web, landing pages y marketplaces con rapidez, estrategia y estilo",
+        "subtitle": "Creamos y desarrollamos sitios web, landing pages y marketplaces combinando velocidad, estrategia digital y diseño a la medida, para que tu negocio destaque desde el primer clic.",
         "ctaButton": "Comienza ahora"
     },
     "about": {
         "title": "¿Qué Hacemos?",
-        "subtitle": "En Soraia transformamos ideas en experiencias digitales impactantes",
-        "description": "Ofrecemos soluciones digitales adaptadas a tus necesidades, combinando diseño creativo y tecnología de vanguardia para potenciar tu presencia online.",
+        "subtitle": "En Soraia convertimos tus ideas en experiencias digitales memorables.",
+        "description": "Desarrollamos soluciones a medida que integran diseño creativo, tecnología avanzada y una estrategia enfocada en resultados, impulsando tu presencia online con impacto real.",
         "item1": {
-            "title": "Diseño web a medida",
-            "description": "Creamos sitios únicos que reflejan tu marca y conectan con tu audiencia"
+            "title": "Diseño web personalizado",
+            "description": "Creamos sitios únicos que reflejan la esencia de tu marca y generan conexión auténtica con tu audiencia."
         },
         "item2": {
             "title": "Desarrollo ágil",
-            "description": "Implementamos soluciones funcionales con las últimas tecnologías en tiempo récord"
+            "description": "Aplicamos metodologías modernas para entregar soluciones eficientes, funcionales y en tiempo récord."
         },
         "item3": {
             "title": "Estrategia digital",
-            "description": "Definimos el enfoque ideal para maximizar el impacto de tu presencia online"
+            "description": "Trazamos un camino claro para posicionar tu negocio en el entorno digital, maximizando su visibilidad e impacto."
         }
     },
     "services": {
@@ -43,21 +43,21 @@
             "title": "Plan Básico",
             "name": "Sitio Web Informativo",
             "description": "Ideal para presentar tu negocio o marca con un sitio web profesional y responsive",
-            "priceRange": "$200 a $500",
-            "maintenance": "Opción de mantenimiento y gestión: $120 adicionales/mes"
+            "priceRange": "$200 USD a $500 USD",
+            "maintenance": "Opción de mantenimiento y gestión: $120 USD adicionales/mes"
         },
         "intermediate": {
             "title": "Plan Intermedio",
             "name": "Sitio Web Dinámico",
             "description": "Solución completa para negocios que requieren funcionalidades avanzadas e interacción con usuarios",
-            "priceRange": "$500 a $1,200",
-            "maintenance": "Opción de mantenimiento y gestión: $120 adicionales/mes"
+            "priceRange": "$500 USD a $1,200 USD",
+            "maintenance": "Opción de mantenimiento y gestión: $120 USD adicionales/mes"
         },
         "pro": {
             "title": "Plan Pro",
             "name": "Solución Digital Completa",
             "description": "La solución definitiva para negocios que necesitan una presencia digital integral y personalizada",
-            "priceRange": "Más de $1,200",
+            "priceRange": "Más de $1,200 USD",
             "maintenance": "Incluye mantenimiento y gestión sin costo adicional",
             "contactButton": "Contáctanos para más detalles"
         },
@@ -66,12 +66,12 @@
             "maintenance": {
                 "title": "Mantenimiento web",
                 "description": "Mantén tu sitio web actualizado, seguro y funcionando sin problemas con nuestro servicio de mantenimiento mensual",
-                "price": "$120/mes"
+                "price": "$120 USD/mes"
             },
             "seo": {
                 "title": "SEO y Marketing Digital",
                 "description": "Mejora la visibilidad de tu sitio web en los motores de búsqueda y aumenta tu tráfico orgánico",
-                "price": "$120/mes"
+                "price": "$120 USD/mes"
             }
         },
         "webSite": {

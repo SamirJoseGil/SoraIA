@@ -15,24 +15,24 @@
     },
     "hero": {
         "title": "Your website ready in record time",
-        "subtitle": "We design and develop websites, landing pages and marketplaces with speed, strategy and style",
+        "subtitle": "We create and develop websites, landing pages and marketplaces combining speed, digital strategy and custom design, so your business stands out from the first click.",
         "ctaButton": "Get started now"
     },
     "about": {
         "title": "What We Do",
-        "subtitle": "At Soraia we transform ideas into impactful digital experiences",
-        "description": "We offer digital solutions tailored to your needs, combining creative design and cutting-edge technology to enhance your online presence.",
+        "subtitle": "At Soraia we transform your ideas into memorable digital experiences.",
+        "description": "We develop tailored solutions that integrate creative design, advanced technology and a results-focused strategy, boosting your online presence with real impact.",
         "item1": {
             "title": "Custom web design",
-            "description": "We create unique sites that reflect your brand and connect with your audience"
+            "description": "We create unique sites that reflect the essence of your brand and generate authentic connection with your audience."
         },
         "item2": {
             "title": "Agile development",
-            "description": "We implement functional solutions with the latest technologies in record time"
+            "description": "We apply modern methodologies to deliver efficient, functional solutions in record time."
         },
         "item3": {
             "title": "Digital strategy",
-            "description": "We define the ideal approach to maximize the impact of your online presence"
+            "description": "We chart a clear path to position your business in the digital environment, maximizing its visibility and impact."
         }
     },
     "services": {
@@ -43,21 +43,21 @@
             "title": "Basic Plan",
             "name": "Informational Website",
             "description": "Ideal for presenting your business or brand with a professional and responsive website",
-            "priceRange": "$200 to $500",
-            "maintenance": "Maintenance and management option: additional $120/month"
+            "priceRange": "$200 USD to $500 USD",
+            "maintenance": "Maintenance and management option: additional $120 USD/month"
         },
         "intermediate": {
             "title": "Intermediate Plan",
             "name": "Dynamic Website",
             "description": "Complete solution for businesses that require advanced features and user interaction",
-            "priceRange": "$500 to $1,200",
-            "maintenance": "Maintenance and management option: additional $120/month"
+            "priceRange": "$500 USD to $1,200 USD",
+            "maintenance": "Maintenance and management option: additional $120 USD/month"
         },
         "pro": {
             "title": "Pro Plan",
             "name": "Complete Digital Solution",
             "description": "The ultimate solution for businesses that need a comprehensive and personalized digital presence",
-            "priceRange": "More than $1,200",
+            "priceRange": "More than $1,200 USD",
             "maintenance": "Includes maintenance and management at no additional cost",
             "contactButton": "Contact us for more details"
         },
@@ -66,12 +66,12 @@
             "maintenance": {
                 "title": "Website Maintenance",
                 "description": "Keep your website updated, secure and running smoothly with our monthly maintenance service",
-                "price": "$120/month"
+                "price": "$120 USD/month"
             },
             "seo": {
                 "title": "SEO & Digital Marketing",
                 "description": "Improve the visibility of your website in search engines and increase your organic traffic",
-                "price": "$120/month"
+                "price": "$120 USD/month"
             }
         },
         "webSite": {

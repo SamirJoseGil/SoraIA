@@ -50,12 +50,12 @@ export default function Hero() {
                 ref={heroRef}
                 className={`container relative mx-auto px-16 z-10 ${heroIsVisible ? 'animate-fade-in' : 'opacity-0'}`}
             >
-                <div className="flex flex-col lg:flex-row items-center">
-                    {/* Left Column - Content - Left aligned */}
-                    <div className="lg:w-1/2 text-left">
-                        {/* Accent line above heading - left aligned */}
+                <div className="flex flex-col items-center text-center">
+                    {/* Content - Centered */}
+                    <div className="w-full max-w-4xl mx-auto">
+                        {/* Accent line above heading - centered */}
                         <div
-                            className={`w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                            className={`w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent rounded-full mx-auto transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
                             style={{ transitionDelay: '200ms' }}
                         ></div>
 
@@ -66,20 +66,20 @@ export default function Hero() {
                             {t('hero.title')}
                         </h1>
 
-                        {/* Animated underline - left aligned */}
+                        {/* Animated underline - centered */}
                         <div
-                            className={`w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
+                            className={`w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse mx-auto transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
                             style={{ transitionDelay: '600ms' }}
                         ></div>
 
                         <p
-                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-xl leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-3xl mx-auto leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '800ms' }}
                         >
                             {t('hero.subtitle')}
                         </p>
 
-                        {/* Left-aligned CTA button with animation */}
+                        {/* Centered CTA button with animation */}
                         <a
                             href="#contact"
                             className={`relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-1000 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -91,27 +91,6 @@ export default function Hero() {
                             </svg>
                             <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
                         </a>
-                    </div>
-
-                    {/* Right Column - Image with entrance animation */}
-                    <div className="lg:w-1/2 mt-12 lg:mt-0 relative flex justify-center">
-                        <div
-                            className={`relative z-10 transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-20 scale-95'}`}
-                            style={{ transitionDelay: '700ms' }}
-                        >
-                            {/* Image without container background - increased size */}
-                            <img
-                                src="PcPhoneImg.png"
-                                alt="Diseño web profesional"
-                                className="w-auto h-auto max-h-[50rem] drop-shadow-xl"
-                                onError={(e) => {
-                                    // Fallback if image doesn't load
-                                    const target = e.target as HTMLImageElement;
-                                    target.onerror = null;
-                                    target.src = "https://placehold.co/800x600/3a75b0/ffffff?text=Soraia+Web";
-                                }}
-                            />
-                        </div>
                     </div>
                 </div>
             </div>
