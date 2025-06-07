@@ -1,15 +1,12 @@
-import { json, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData, useSearchParams } from "@remix-run/react";
-import { useState, useEffect } from "react";
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import FloatingWhatsApp from "~/components/FloatingWhatsApp";
 import BlogHeader from "~/components/blog/BlogHeader";
-import BlogCard from "~/components/blog/BlogCard";
-import CategoryList from "~/components/blog/CategoryList";
-import SearchBar from "~/components/blog/SearchBar";
+import BlogPostCard from "~/components/blog/BlogPostCard";
 import FeaturedBanner from "~/components/blog/FeaturedBanner";
-import { extractCategories, filterPosts, sortPostsByDate } from "~/utils/blog-utils";
+import { useLanguage } from "~/i18n/context";
 import type { BlogPost } from "~/types/blog";
 import blogData from "~/data/blog.json";
 import type { MetaFunction } from "@remix-run/node";
@@ -17,45 +14,24 @@ import type { MetaFunction } from "@remix-run/node";
 export const meta: MetaFunction = () => {
   return [
     { title: "Blog | Soraia" },
-    { name: "description", content: "Recursos, guías y tendencias sobre diseño web, marketing digital y estrategias para tu negocio online." },
+    { name: "description", content: "Artículos, guías y recursos sobre desarrollo web, diseño y tecnología" },
   ];
 };
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  const url = new URL(request.url);
-  const category = url.searchParams.get("category");
-  const searchTerm = url.searchParams.get("search");
-
+export async function loader() {
   // Convertir el JSON importado al tipo BlogPost[]
   const posts = blogData as BlogPost[];
   
-  // Extraer categorías únicas para los filtros
-  const categories = extractCategories(posts);
+  // Obtener categorías únicas
+  const categories = Array.from(new Set(posts.map(post => post.category)));
   
-  // Filtrar y ordenar los posts
-  const filteredPosts = filterPosts(posts, category, searchTerm);
-  const sortedPosts = sortPostsByDate(filteredPosts);
-
-  return json({
-    posts: sortedPosts,
-    categories,
-    initialCategory: category,
-    initialSearchTerm: searchTerm
-  });
+  return json({ posts, categories });
 }
 
 export default function BlogIndex() {
-  const { posts, categories, initialCategory, initialSearchTerm } = useLoaderData<typeof loader>();
-  const [searchParams] = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState<string | null>(initialCategory);
-  const [searchTerm, setSearchTerm] = useState<string | null>(initialSearchTerm);
+  const { posts, categories } = useLoaderData<typeof loader>();
+  const { t } = useLanguage();
   
-  // Actualizar estados cuando cambian los parámetros de búsqueda
-  useEffect(() => {
-    setActiveCategory(searchParams.get("category"));
-    setSearchTerm(searchParams.get("search"));
-  }, [searchParams]);
-
   // Encuentra el artículo destacado por su slug
   const featuredPost = posts.find(post => post.slug === "desarrollo-web-personalizado-2025");
 
@@ -65,45 +41,40 @@ export default function BlogIndex() {
       
       <main className="flex-grow">
         <BlogHeader 
-          title="Blog de Soraia" 
-          subtitle="Noticias, guías y recursos sobre desarrollo web y tecnología" 
+          title={t('blog.title')} 
+          subtitle={t('blog.subtitle')} 
         />
         
         <div className="container mx-auto px-4 py-12">
           {/* Banner destacado */}
           {featuredPost && (
             <FeaturedBanner
-              title="👉 5 razones para invertir en desarrollo web personalizado en 2025"
-              subtitle="Una guía clara para emprendedores y empresas que quieren destacar en lo digital."
               link={`/blog/${featuredPost.slug}`}
             />
           )}
           
-          {/* Búsqueda y filtros */}
-          <div className="mb-12">
-            <SearchBar searchTerm={searchTerm} />
-            <CategoryList categories={categories} activeCategory={activeCategory} />
+          {/* Filtros de categoría */}
+          <div className="mb-10 flex flex-wrap gap-2">
+            <button className="px-4 py-2 rounded-full bg-soraia-primary text-white text-sm font-medium">
+              {t('blog.categories.all')}
+            </button>
+            
+            {categories.map(category => (
+              <button 
+                key={category} 
+                className="px-4 py-2 rounded-full bg-white/10 text-soraia-dark hover:bg-white/20 transition-colors text-sm font-medium"
+              >
+                {category}
+              </button>
+            ))}
           </div>
           
-          {/* Lista de posts */}
-          {posts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map(post => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <h3 className="text-2xl font-semibold text-white mb-4">No se encontraron artículos</h3>
-              <p className="text-soraia-dark mb-8">Intenta con otros términos de búsqueda o categorías</p>
-              <a 
-                href="/blog" 
-                className="inline-block px-6 py-3 bg-soraia-primary text-white rounded-lg hover:bg-soraia-primary/80 transition-colors"
-              >
-                Ver todos los artículos
-              </a>
-            </div>
-          )}
+          {/* Grid de artículos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map(post => (
+              <BlogPostCard key={post.id} post={post} />
+            ))}
+          </div>
         </div>
       </main>
       

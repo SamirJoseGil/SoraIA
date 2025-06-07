@@ -1,35 +1,39 @@
 import { Link } from "@remix-run/react";
+import { useLanguage } from "~/i18n/context";
 
 interface BlogHeaderProps {
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   showBackLink?: boolean;
+  backLinkText?: string;
 }
 
 export default function BlogHeader({ 
-  title = "Blog de Soraia",
-  subtitle = "Recursos, guías y tendencias sobre diseño web, marketing digital y estrategias para tu negocio online.",
-  showBackLink = false
+  title, 
+  subtitle, 
+  showBackLink = false,
+  backLinkText
 }: BlogHeaderProps) {
+  const { t } = useLanguage();
+  
   return (
-    <div className="py-12 md:py-20 relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-soraia-primary/20 to-transparent opacity-30"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <div className="bg-gradient-to-b from-gray-900 to-soraia-light pt-20 pb-4">
+      <div className="container mx-auto px-4">
         {showBackLink && (
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center mb-8 text-soraia-dark hover:text-soraia-primary transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Volver al blog
-          </Link>
+          <div className="mb-8">
+            <Link 
+              to="/blog" 
+              className="inline-flex items-center text-soraia-dark hover:text-soraia-primary transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+              </svg>
+              {backLinkText || t('blog.backToList')}
+            </Link>
+          </div>
         )}
         
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">{title}</h1>
         <p className="text-lg text-soraia-dark max-w-3xl">{subtitle}</p>
       </div>
     </div>

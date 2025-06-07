@@ -1,17 +1,16 @@
 import { Link } from "@remix-run/react";
 import { formatDate } from "~/utils/blog-utils";
+import { useLanguage } from "~/i18n/context";
+import { isExternalUrl } from "~/utils/image-utils";
 import type { BlogPost } from "~/types/blog";
 
 interface BlogPostCardProps {
   post: BlogPost;
 }
 
-// Función auxiliar para determinar si una URL es externa
-const isExternalUrl = (url: string): boolean => {
-  return url.startsWith('http://') || url.startsWith('https://');
-};
-
 export default function BlogPostCard({ post }: BlogPostCardProps) {
+  const { t } = useLanguage();
+  
   // Determinar la ruta de la imagen (local o externa)
   const imageUrl = isExternalUrl(post.coverImage) 
     ? post.coverImage 
@@ -37,7 +36,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
         </div>
         <div className="p-5">
           <div className="flex items-center mb-3">
-            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-soraia-primary/20 text-soraia-primary">
+            <span className="px-2 py-1 text-xs font-semibold rounded-full bg-soraia-primary/20 text-soraia-primary mr-4">
               {post.category}
             </span>
             <span className="text-soraia-dark text-xs ml-3">
@@ -53,7 +52,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
           <div className="mt-4 flex items-center justify-between">
             <span className="text-xs text-soraia-dark">{post.author}</span>
             <span className="text-soraia-primary text-sm font-medium group-hover:underline">
-              Leer más
+              {t('blog.readMore')}
             </span>
           </div>
         </div>

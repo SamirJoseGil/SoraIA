@@ -11,7 +11,8 @@
         "services": "Servicios",
         "whySoraia": "¿Por qué Soraia?",
         "contact": "Contacto",
-        "catalog": "Catálogo"
+        "catalog": "Catálogo",
+        "blog": "Blog"
     },
     "hero": {
         "title": "Tu página web lista en tiempo récord",
@@ -132,5 +133,28 @@
     "servicesPage": {
         "title": "Nuestros Servicios y Precios",
         "subtitle": "Soluciones digitales completas para tu negocio con precios transparentes y adaptados a tus necesidades"
+    },
+    "blog": {
+        "title": "Blog de Soraia",
+        "subtitle": "Noticias, guías y recursos sobre desarrollo web y tecnología",
+        "backToList": "Volver al listado",
+        "readMore": "Leer más",
+        "author": "Autor",
+        "relatedPosts": "Artículos relacionados",
+        "categories": {
+            "all": "Todas las categorías",
+            "webDevelopment": "Desarrollo Web",
+            "digitalMarketing": "Marketing Digital",
+            "design": "Diseño",
+            "technology": "Tecnología"
+        },
+        "featuredPost": {
+            "title": "👉 5 razones para invertir en desarrollo web personalizado en 2025",
+            "subtitle": "Una guía clara para emprendedores y empresas que quieren destacar en lo digital."
+        },
+        "readingTime": "min. de lectura",
+        "searchPlaceholder": "Buscar artículos...",
+        "noResults": "No se encontraron resultados para tu búsqueda.",
+        "loadMore": "Cargar más artículos"
     }
 }

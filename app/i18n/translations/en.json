@@ -11,7 +11,8 @@
         "services": "Services",
         "whySoraia": "Why Soraia?",
         "contact": "Contact",
-        "catalog": "Catalog"
+        "catalog": "Catalog",
+        "blog": "Blog"
     },
     "hero": {
         "title": "Your website ready in record time",
@@ -132,5 +133,28 @@
     "servicesPage": {
         "title": "Our Services and Pricing",
         "subtitle": "Complete digital solutions for your business with transparent prices tailored to your needs"
+    },
+    "blog": {
+        "title": "Soraia Blog",
+        "subtitle": "News, guides and resources about web development and technology",
+        "backToList": "Back to list",
+        "readMore": "Read more",
+        "author": "Author",
+        "relatedPosts": "Related articles",
+        "categories": {
+            "all": "All categories",
+            "webDevelopment": "Web Development",
+            "digitalMarketing": "Digital Marketing",
+            "design": "Design",
+            "technology": "Technology"
+        },
+        "featuredPost": {
+            "title": "👉 5 reasons to invest in custom web development in 2025",
+            "subtitle": "A clear guide for entrepreneurs and businesses looking to stand out in the digital space."
+        },
+        "readingTime": "min. read",
+        "searchPlaceholder": "Search articles...",
+        "noResults": "No results found for your search.",
+        "loadMore": "Load more articles"
     }
 }

@@ -5,9 +5,11 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import FloatingWhatsApp from "~/components/FloatingWhatsApp";
 import BlogHeader from "~/components/blog/BlogHeader";
+import { useLanguage } from "~/i18n/context";
 import type { BlogPost } from "~/types/blog";
 import blogData from "~/data/blog.json";
 import type { MetaFunction } from "@remix-run/node";
+import { isExternalUrl } from "~/utils/image-utils";
 
 // Define el tipo de datos que devuelve el loader
 type LoaderData = {
@@ -51,13 +53,9 @@ export async function loader({ params }: LoaderFunctionArgs) {
   return json({ post, relatedPosts });
 }
 
-// Función auxiliar para determinar si una URL es externa
-const isExternalUrl = (url: string): boolean => {
-  return url.startsWith('http://') || url.startsWith('https://');
-};
-
 export default function BlogPost() {
   const { post, relatedPosts } = useLoaderData<typeof loader>();
+  const { t } = useLanguage();
 
   // Determinar la ruta de la imagen (local o externa)
   const imageUrl = isExternalUrl(post.coverImage) 
@@ -73,8 +71,9 @@ export default function BlogPost() {
       <main className="flex-grow">
         <BlogHeader 
           title={post.title} 
-          subtitle={`Por ${post.author} • ${formatDate(post.publishedAt)}`} 
+          subtitle={`${t('blog.author')}: ${post.author} • ${formatDate(post.publishedAt)}`} 
           showBackLink={true} 
+          backLinkText={t('blog.backToList')}
         />
         
         <div className="container mx-auto px-4 py-12">
@@ -121,14 +120,14 @@ export default function BlogPost() {
             
             {/* Autor */}
             <div className="mt-12 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-gray-700/30">
-              <h3 className="text-xl font-bold text-white mb-2">Autor</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{t('blog.author')}</h3>
               <p className="text-soraia-dark">{post.author}</p>
             </div>
             
             {/* Posts relacionados */}
             {relatedPosts.length > 0 && (
               <div className="mt-16">
-                <h3 className="text-2xl font-bold text-white mb-6">Artículos relacionados</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">{t('blog.relatedPosts')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {relatedPosts.map(relatedPost => {
                     const relatedImageUrl = isExternalUrl(relatedPost.coverImage) 
