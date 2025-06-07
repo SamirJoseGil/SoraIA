@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "slug": "como-hacer-seo-para-tu-negocio",
+    "title": "Cómo hacer SEO para tu negocio",
+    "summary": "Aprende estrategias básicas de SEO para mejorar tu presencia online y aumentar la visibilidad de tu sitio web en los motores de búsqueda.",
+    "content": "<p>El SEO (Search Engine Optimization) es fundamental para cualquier negocio online. En este artículo, te explicamos las estrategias básicas para mejorar tu posicionamiento.</p><h2>1. Investiga las palabras clave</h2><p>Comienza identificando los términos que tu audiencia busca. Utiliza herramientas como Google Keyword Planner o Semrush para encontrar palabras relevantes para tu negocio.</p><h2>2. Optimiza tu contenido</h2><p>Crea contenido de calidad que responda a las necesidades de tu audiencia. Incluye las palabras clave de manera natural en títulos, subtítulos y contenido.</p><h2>3. Mejora la experiencia de usuario</h2><p>Google valora sitios rápidos, seguros y fáciles de navegar. Asegúrate de que tu sitio sea responsive y tenga tiempos de carga rápidos.</p>",
+    "category": "Marketing digital",
+    "coverImage": "/images/blog/seo.jpg",
+    "author": "Ana Estrada",
+    "publishedAt": "2025-06-06T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "slug": "tendencias-diseno-web-2025",
+    "title": "Tendencias de diseño web para 2025",
+    "summary": "Descubre las tendencias de diseño web que dominarán el mercado en 2025 y cómo implementarlas en tu sitio para destacar.",
+    "content": "<p>El diseño web evoluciona constantemente. Conocer las últimas tendencias te ayudará a mantener tu sitio actualizado y atractivo para los usuarios.</p><h2>1. Diseño minimalista y funcional</h2><p>Menos es más. Los diseños limpios con espacios en blanco estratégicos ayudan a los usuarios a enfocarse en lo importante.</p><h2>2. Modo oscuro</h2><p>El modo oscuro no solo reduce la fatiga visual, sino que también ahorra batería en dispositivos móviles. Implementar esta opción mejora la experiencia de usuario.</p><h2>3. Microinteracciones</h2><p>Pequeñas animaciones y efectos que hacen que la navegación sea más intuitiva y agradable, mejorando el engagement.</p>",
+    "category": "Diseño Web",
+    "coverImage": "/images/blog/design-trends.jpg",
+    "author": "Carlos Méndez",
+    "publishedAt": "2025-05-15T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "slug": "estrategias-marketing-digital-pequenos-negocios",
+    "title": "Estrategias de marketing digital para pequeños negocios",
+    "summary": "Guía práctica con estrategias de marketing digital efectivas y económicas para emprendedores y pequeñas empresas.",
+    "content": "<p>El marketing digital ofrece grandes oportunidades para negocios con presupuestos limitados. Aquí te mostramos las estrategias más efectivas.</p><h2>1. Marketing de contenidos</h2><p>Crea contenido valioso y relevante para tu audiencia. Un blog bien gestionado puede atraer tráfico orgánico y establecerte como autoridad en tu sector.</p><h2>2. Email marketing</h2><p>Sigue siendo una de las estrategias con mejor ROI. Construye una lista de suscriptores y mantén una comunicación regular con ofertas y contenido de valor.</p><h2>3. Redes sociales</h2><p>Identifica dónde está tu audiencia y crea una estrategia consistente. No necesitas estar en todas las plataformas, enfócate en las más relevantes para tu negocio.</p>",
+    "category": "Marketing digital",
+    "coverImage": "/images/blog/digital-marketing.jpg",
+    "author": "Laura Torres",
+    "publishedAt": "2025-04-22T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "slug": "como-mejorar-velocidad-sitio-web",
+    "title": "Cómo mejorar la velocidad de tu sitio web",
+    "summary": "Técnicas prácticas para optimizar el rendimiento de tu sitio web y mejorar la experiencia de usuario y el SEO.",
+    "content": "<p>La velocidad de carga es un factor crucial tanto para la experiencia de usuario como para el SEO. Estos son los pasos para mejorar el rendimiento de tu sitio.</p><h2>1. Optimiza las imágenes</h2><p>Utiliza formatos modernos como WebP y asegúrate de redimensionar las imágenes al tamaño necesario antes de subirlas.</p><h2>2. Implementa caché del navegador</h2><p>Configura correctamente las cabeceras HTTP para permitir que los recursos estáticos se almacenen en caché, reduciendo las solicitudes al servidor.</p><h2>3. Minimiza los archivos CSS y JavaScript</h2><p>Elimina espacios, comentarios y código innecesario para reducir el tamaño de los archivos. Considera el uso de herramientas de bundling y minificación.</p>",
+    "category": "Desarrollo Web",
+    "coverImage": "/images/blog/web-speed.jpg",
+    "author": "Miguel Ángel Sánchez",
+    "publishedAt": "2025-03-10T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "slug": "inteligencia-artificial-en-marketing",
+    "title": "Inteligencia artificial en marketing: casos prácticos",
+    "summary": "Ejemplos reales de cómo la inteligencia artificial está transformando las estrategias de marketing y cómo implementarla en tu empresa.",
+    "content": "<p>La IA está revolucionando el marketing digital, permitiendo personalización a escala y optimización basada en datos. Veamos aplicaciones prácticas.</p><h2>1. Chatbots inteligentes</h2><p>Los chatbots modernos pueden manejar consultas complejas, calificar leads y ofrecer atención personalizada 24/7, mejorando la experiencia del cliente.</p><h2>2. Contenido generado por IA</h2><p>Herramientas de IA pueden ayudar a crear y optimizar contenido, desde títulos atractivos hasta artículos completos, ahorrando tiempo y recursos.</p><h2>3. Análisis predictivo</h2><p>La IA puede analizar patrones de comportamiento y predecir acciones futuras de los clientes, permitiendo campañas más efectivas y personalizadas.</p>",
+    "category": "Inteligencia Artificial",
+    "coverImage": "/images/blog/ai-marketing.jpg",
+    "author": "Patricia Gómez",
+    "publishedAt": "2025-02-18T00:00:00.000Z"
+  }
+]

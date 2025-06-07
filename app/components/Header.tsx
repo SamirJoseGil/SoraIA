@@ -104,6 +104,7 @@ export default function Header({ activeSection }: HeaderProps) {
     { id: 'services', label: t('navbar.services') },
     { id: 'why-soraia', label: t('navbar.whySoraia') },
     { id: 'contact', label: t('navbar.contact') },
+    { id: 'blog', label: 'Blog', href: '/blog' },
     { id: 'servicios', label: t('navbar.catalog'), href: '/servicios' }
   ];
 
