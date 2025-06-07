@@ -226,3 +226,62 @@ body {
 .card {
   @apply bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 text-soraia-dark;
 }
+
+/* Estilos personalizados para el contenido del blog */
+.prose h2 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: theme('colors.soraia.primary');
+  font-weight: 700;
+}
+
+.prose h3 {
+  font-size: 1.375rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: theme('colors.soraia.primary');
+  font-weight: 600;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: theme('colors.soraia.accent');
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose strong {
+  color: white;
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 4px solid theme('colors.soraia.primary');
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+/* Espaciado adicional entre secciones */
+.prose > * + * {
+  margin-top: 1.5rem;
+}

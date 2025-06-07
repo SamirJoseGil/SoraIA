@@ -51,8 +51,20 @@ export async function loader({ params }: LoaderFunctionArgs) {
   return json({ post, relatedPosts });
 }
 
+// Función auxiliar para determinar si una URL es externa
+const isExternalUrl = (url: string): boolean => {
+  return url.startsWith('http://') || url.startsWith('https://');
+};
+
 export default function BlogPost() {
   const { post, relatedPosts } = useLoaderData<typeof loader>();
+
+  // Determinar la ruta de la imagen (local o externa)
+  const imageUrl = isExternalUrl(post.coverImage) 
+    ? post.coverImage 
+    : post.coverImage.startsWith('/') 
+      ? post.coverImage 
+      : `/images/blog/${post.coverImage}`;
 
   return (
     <div className="min-h-screen bg-soraia-light flex flex-col">
@@ -70,9 +82,15 @@ export default function BlogPost() {
             {/* Imagen destacada */}
             <div className="mb-10 rounded-xl overflow-hidden">
               <img 
-                src={post.coverImage} 
+                src={imageUrl} 
                 alt={post.title} 
                 className="w-full h-auto object-cover"
+                onError={(e) => {
+                  // Fallback si la imagen no se carga
+                  const target = e.target as HTMLImageElement;
+                  target.onerror = null;
+                  target.src = "/images/blog/default-post.jpg";
+                }}
               />
             </div>
             
@@ -86,9 +104,18 @@ export default function BlogPost() {
               </span>
             </div>
             
-            {/* Contenido */}
+            {/* Contenido con estilos mejorados para HTML */}
             <div 
-              className="prose prose-lg prose-invert prose-headings:text-soraia-primary prose-a:text-soraia-accent prose-strong:text-white prose-img:rounded-xl max-w-none"
+              className="prose prose-lg prose-invert max-w-none
+                prose-headings:text-soraia-primary prose-headings:font-bold
+                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-6
+                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:mb-6 prose-p:text-soraia-dark prose-p:leading-relaxed
+                prose-a:text-soraia-accent prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-white
+                prose-ul:my-6 prose-ul:list-disc prose-ul:pl-5
+                prose-li:text-soraia-dark prose-li:mb-2
+                prose-img:rounded-xl"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
             
@@ -103,25 +130,38 @@ export default function BlogPost() {
               <div className="mt-16">
                 <h3 className="text-2xl font-bold text-white mb-6">Artículos relacionados</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {relatedPosts.map(relatedPost => (
-                    <div key={relatedPost.id} className="bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-white/10 transition-all">
-                      <Link to={`/blog/${relatedPost.slug}`} className="block">
-                        <img 
-                          src={relatedPost.coverImage} 
-                          alt={relatedPost.title} 
-                          className="w-full h-40 object-cover"
-                        />
-                        <div className="p-4">
-                          <h4 className="text-white font-medium mb-2 hover:text-soraia-primary transition-colors">
-                            {relatedPost.title}
-                          </h4>
-                          <span className="text-xs text-soraia-dark">
-                            {formatDate(relatedPost.publishedAt)}
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
+                  {relatedPosts.map(relatedPost => {
+                    const relatedImageUrl = isExternalUrl(relatedPost.coverImage) 
+                      ? relatedPost.coverImage 
+                      : relatedPost.coverImage.startsWith('/') 
+                        ? relatedPost.coverImage 
+                        : `/images/blog/${relatedPost.coverImage}`;
+                        
+                    return (
+                      <div key={relatedPost.id} className="bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-white/10 transition-all">
+                        <Link to={`/blog/${relatedPost.slug}`} className="block">
+                          <img 
+                            src={relatedImageUrl} 
+                            alt={relatedPost.title} 
+                            className="w-full h-40 object-cover"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.onerror = null;
+                              target.src = "/images/blog/default-post.jpg";
+                            }}
+                          />
+                          <div className="p-4">
+                            <h4 className="text-white font-medium mb-2 hover:text-soraia-primary transition-colors">
+                              {relatedPost.title}
+                            </h4>
+                            <span className="text-xs text-soraia-dark">
+                              {formatDate(relatedPost.publishedAt)}
+                            </span>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}

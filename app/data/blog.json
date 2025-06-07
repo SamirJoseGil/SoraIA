@@ -6,7 +6,7 @@
     "summary": "Aprende estrategias básicas de SEO para mejorar tu presencia online y aumentar la visibilidad de tu sitio web en los motores de búsqueda.",
     "content": "<p>El SEO (Search Engine Optimization) es fundamental para cualquier negocio online. En este artículo, te explicamos las estrategias básicas para mejorar tu posicionamiento.</p><h2>1. Investiga las palabras clave</h2><p>Comienza identificando los términos que tu audiencia busca. Utiliza herramientas como Google Keyword Planner o Semrush para encontrar palabras relevantes para tu negocio.</p><h2>2. Optimiza tu contenido</h2><p>Crea contenido de calidad que responda a las necesidades de tu audiencia. Incluye las palabras clave de manera natural en títulos, subtítulos y contenido.</p><h2>3. Mejora la experiencia de usuario</h2><p>Google valora sitios rápidos, seguros y fáciles de navegar. Asegúrate de que tu sitio sea responsive y tenga tiempos de carga rápidos.</p>",
     "category": "Marketing digital",
-    "coverImage": "/images/blog/seo.jpg",
+    "coverImage": "https://www.damos.co/fotosnoticias/mac_11_estrategias_de_marketing_digital_que_debes_conocer_1675639100.jpg",
     "author": "Ana Estrada",
     "publishedAt": "2025-06-06T00:00:00.000Z"
   },
@@ -14,44 +14,55 @@
     "id": "2",
     "slug": "tendencias-diseno-web-2025",
     "title": "Tendencias de diseño web para 2025",
-    "summary": "Descubre las tendencias de diseño web que dominarán el mercado en 2025 y cómo implementarlas en tu sitio para destacar.",
-    "content": "<p>El diseño web evoluciona constantemente. Conocer las últimas tendencias te ayudará a mantener tu sitio actualizado y atractivo para los usuarios.</p><h2>1. Diseño minimalista y funcional</h2><p>Menos es más. Los diseños limpios con espacios en blanco estratégicos ayudan a los usuarios a enfocarse en lo importante.</p><h2>2. Modo oscuro</h2><p>El modo oscuro no solo reduce la fatiga visual, sino que también ahorra batería en dispositivos móviles. Implementar esta opción mejora la experiencia de usuario.</p><h2>3. Microinteracciones</h2><p>Pequeñas animaciones y efectos que hacen que la navegación sea más intuitiva y agradable, mejorando el engagement.</p>",
-    "category": "Diseño Web",
-    "coverImage": "/images/blog/design-trends.jpg",
-    "author": "Carlos Méndez",
-    "publishedAt": "2025-05-15T00:00:00.000Z"
+    "summary": "Descubre las tendencias de diseño web que dominarán el mercado en 2025 y cómo puedes implementarlas en tu sitio web.",
+    "content": "<p>El diseño web está en constante evolución. Conocer las últimas tendencias te ayudará a mantener tu sitio actualizado y atractivo para los usuarios.</p><h2>1. Diseño minimalista y funcional</h2><p>Menos es más. Los diseños limpios con espacios en blanco estratégicos ayudan a los usuarios a enfocarse en lo importante.</p><h2>2. Modo oscuro</h2><p>El modo oscuro no solo reduce la fatiga visual, sino que también ahorra batería en dispositivos móviles. Implementar esta opción mejora la experiencia de usuario.</p><h2>3. Microinteracciones</h2><p>Pequeñas animaciones y efectos que hacen que la navegación sea más intuitiva y agradable, mejorando el engagement.</p>",
+    "category": "Diseño web",
+    "coverImage": "https://marketing4ecommerce.net/wp-content/uploads/2024/11/diseno-web.jpg",
+    "author": "Carlos Gómez",
+    "publishedAt": "2025-05-20T00:00:00.000Z"
   },
   {
     "id": "3",
     "slug": "estrategias-marketing-digital-pequenos-negocios",
     "title": "Estrategias de marketing digital para pequeños negocios",
     "summary": "Guía práctica con estrategias de marketing digital efectivas y económicas para emprendedores y pequeñas empresas.",
-    "content": "<p>El marketing digital ofrece grandes oportunidades para negocios con presupuestos limitados. Aquí te mostramos las estrategias más efectivas.</p><h2>1. Marketing de contenidos</h2><p>Crea contenido valioso y relevante para tu audiencia. Un blog bien gestionado puede atraer tráfico orgánico y establecerte como autoridad en tu sector.</p><h2>2. Email marketing</h2><p>Sigue siendo una de las estrategias con mejor ROI. Construye una lista de suscriptores y mantén una comunicación regular con ofertas y contenido de valor.</p><h2>3. Redes sociales</h2><p>Identifica dónde está tu audiencia y crea una estrategia consistente. No necesitas estar en todas las plataformas, enfócate en las más relevantes para tu negocio.</p>",
+    "content": "<p>El marketing digital ofrece grandes oportunidades para los pequeños negocios. Aquí te mostramos las estrategias más efectivas.</p><h2>1. Marketing de contenidos</h2><p>Crea contenido valioso y relevante para tu audiencia. Un blog bien gestionado puede atraer tráfico orgánico y establecerte como autoridad en tu sector.</p><h2>2. Email marketing</h2><p>Sigue siendo una de las estrategias con mejor ROI. Construye una lista de suscriptores y mantén una comunicación regular con ofertas y contenido de valor.</p><h2>3. Redes sociales</h2><p>Identifica dónde está tu audiencia y crea una estrategia consistente. No necesitas estar en todas las plataformas, enfócate en las más relevantes para tu negocio.</p>",
     "category": "Marketing digital",
-    "coverImage": "/images/blog/digital-marketing.jpg",
-    "author": "Laura Torres",
-    "publishedAt": "2025-04-22T00:00:00.000Z"
+    "coverImage": "https://xbytessolutions.com/wp-content/uploads/2022/02/O-que-e-marketing-digital.jpg",
+    "author": "Marta Rodríguez",
+    "publishedAt": "2025-05-10T00:00:00.000Z"
   },
   {
     "id": "4",
     "slug": "como-mejorar-velocidad-sitio-web",
     "title": "Cómo mejorar la velocidad de tu sitio web",
-    "summary": "Técnicas prácticas para optimizar el rendimiento de tu sitio web y mejorar la experiencia de usuario y el SEO.",
-    "content": "<p>La velocidad de carga es un factor crucial tanto para la experiencia de usuario como para el SEO. Estos son los pasos para mejorar el rendimiento de tu sitio.</p><h2>1. Optimiza las imágenes</h2><p>Utiliza formatos modernos como WebP y asegúrate de redimensionar las imágenes al tamaño necesario antes de subirlas.</p><h2>2. Implementa caché del navegador</h2><p>Configura correctamente las cabeceras HTTP para permitir que los recursos estáticos se almacenen en caché, reduciendo las solicitudes al servidor.</p><h2>3. Minimiza los archivos CSS y JavaScript</h2><p>Elimina espacios, comentarios y código innecesario para reducir el tamaño de los archivos. Considera el uso de herramientas de bundling y minificación.</p>",
+    "summary": "Técnicas prácticas para optimizar el rendimiento de tu sitio web y mejorar la experiencia de usuario.",
+    "content": "<p>La velocidad de carga es uno de los factores más importantes para el éxito de un sitio web. Estos son los pasos para mejorar el rendimiento de tu sitio.</p><h2>1. Optimiza las imágenes</h2><p>Utiliza formatos modernos como WebP y asegúrate de redimensionar las imágenes al tamaño necesario antes de subirlas.</p><h2>2. Implementa caché del navegador</h2><p>Configura correctamente las cabeceras HTTP para permitir que los recursos estáticos se almacenen en caché, reduciendo las solicitudes al servidor.</p><h2>3. Minimiza los archivos CSS y JavaScript</h2><p>Elimina espacios, comentarios y código innecesario para reducir el tamaño de los archivos. Considera el uso de herramientas de bundling y minificación.</p>",
     "category": "Desarrollo Web",
-    "coverImage": "/images/blog/web-speed.jpg",
-    "author": "Miguel Ángel Sánchez",
-    "publishedAt": "2025-03-10T00:00:00.000Z"
+    "coverImage": "https://fixu.cl/wp-content/uploads/2023/03/mejorar-velocidad-y-rendimiento-web-1024x536.png",
+    "author": "Ricardo Pérez",
+    "publishedAt": "2025-04-28T00:00:00.000Z"
   },
   {
     "id": "5",
-    "slug": "inteligencia-artificial-en-marketing",
+    "slug": "inteligencia-artificial-marketing-casos-practicos",
     "title": "Inteligencia artificial en marketing: casos prácticos",
-    "summary": "Ejemplos reales de cómo la inteligencia artificial está transformando las estrategias de marketing y cómo implementarla en tu empresa.",
-    "content": "<p>La IA está revolucionando el marketing digital, permitiendo personalización a escala y optimización basada en datos. Veamos aplicaciones prácticas.</p><h2>1. Chatbots inteligentes</h2><p>Los chatbots modernos pueden manejar consultas complejas, calificar leads y ofrecer atención personalizada 24/7, mejorando la experiencia del cliente.</p><h2>2. Contenido generado por IA</h2><p>Herramientas de IA pueden ayudar a crear y optimizar contenido, desde títulos atractivos hasta artículos completos, ahorrando tiempo y recursos.</p><h2>3. Análisis predictivo</h2><p>La IA puede analizar patrones de comportamiento y predecir acciones futuras de los clientes, permitiendo campañas más efectivas y personalizadas.</p>",
-    "category": "Inteligencia Artificial",
-    "coverImage": "/images/blog/ai-marketing.jpg",
-    "author": "Patricia Gómez",
-    "publishedAt": "2025-02-18T00:00:00.000Z"
+    "summary": "Ejemplos reales de cómo la inteligencia artificial está transformando las estrategias de marketing en la actualidad.",
+    "content": "<p>La inteligencia artificial está revolucionando el campo del marketing. Veamos aplicaciones prácticas.</p><h2>1. Chatbots inteligentes</h2><p>Los chatbots modernos pueden manejar consultas complejas, calificar leads y ofrecer atención personalizada 24/7, mejorando la experiencia del cliente.</p><h2>2. Contenido generado por IA</h2><p>Herramientas de IA pueden ayudar a crear y optimizar contenido, desde títulos atractivos hasta artículos completos, ahorrando tiempo y recursos.</p><h2>3. Análisis predictivo</h2><p>La IA puede analizar patrones de comportamiento y predecir acciones futuras de los clientes, permitiendo campañas más efectivas y personalizadas.</p>",
+    "category": "Tecnología",
+    "coverImage": "https://static-blog.siteground.com/wp-content/uploads/sites/4/2023/05/IA_and_Marketing.jpg",
+    "author": "Laura Martínez",
+    "publishedAt": "2025-04-15T00:00:00.000Z"
+  },
+  {
+    "id": "desarrollo-web-2025",
+    "slug": "desarrollo-web-personalizado-2025",
+    "title": "Guía Completa: Desarrollo Web Personalizado 2025",
+    "summary": "5 razones clave para invertir en desarrollo web personalizado este año. Ideal para empresas y emprendedores.",
+    "category": "Desarrollo Web",
+    "author": "Equipo Creativo",
+    "publishedAt": "2025-06-06T00:00:00.000Z",
+    "coverImage": "https://sergioescriba.com/wp-content/uploads/2019/01/estructura-paginas-web.png",
+    "content": "<h2>Guía Completa: Desarrollo Web Personalizado 2025</h2><p>En un mundo digital en constante evolución, contar con una presencia web distintiva se ha convertido en un factor determinante para el éxito empresarial. El desarrollo web personalizado ofrece ventajas significativas frente a soluciones prediseñadas, especialmente en 2025 donde la diferenciación es clave.</p><h3>1. Diferenciación en un mercado saturado</h3><p>Las plantillas genéricas y los constructores de sitios web han saturado el mercado con diseños similares. Un desarrollo web personalizado permite que tu marca destaque con una identidad única, creando una experiencia memorable para tus visitantes y reforzando el reconocimiento de tu marca.</p><h3>2. Optimización del rendimiento</h3><p>Los sitios web personalizados se construyen considerando específicamente tus necesidades, lo que significa que no contienen código innecesario que ralentice el rendimiento. Esto resulta en tiempos de carga más rápidos, mejor experiencia de usuario y posicionamiento en buscadores optimizado.</p><h3>3. Escalabilidad garantizada</h3><p>A medida que tu negocio crece, tu sitio web debe evolucionar contigo. Las soluciones personalizadas permiten incorporar nuevas funcionalidades y adaptarse a cambios en la demanda sin limitaciones técnicas, asegurando que tu presencia digital pueda escalar junto con tu negocio.</p><h3>4. Integración perfecta con sistemas existentes</h3><p>Un desarrollo a medida facilita la integración con tus sistemas internos (CRM, ERP, herramientas de marketing, etc.) creando flujos de trabajo más eficientes y centralizando la información empresarial de manera coherente.</p><h3>5. Mayor seguridad y control</h3><p>Las soluciones personalizadas ofrecen mayor seguridad al evitar vulnerabilidades comunes presentes en plataformas populares. Además, mantienes el control total sobre tu activo digital, sin depender de terceros o licencias que puedan cambiar sus condiciones.</p><h3>¿Cuándo es el momento adecuado para invertir?</h3><p>El desarrollo web personalizado resulta especialmente beneficioso para:</p><ul><li>Empresas con flujos de trabajo específicos que requieren automatización</li><li>Negocios que necesitan funcionalidades únicas no disponibles en soluciones prediseñadas</li><li>Proyectos que manejan datos sensibles con altos requerimientos de seguridad</li><li>Marcas que buscan diferenciarse con una experiencia digital única</li></ul><h3>Conclusión</h3><p>Si bien la inversión inicial en desarrollo web personalizado puede ser mayor que las alternativas prediseñadas, los beneficios a largo plazo en términos de rendimiento, seguridad y escalabilidad suelen superar con creces este costo. En 2025, contar con una presencia digital que realmente refleje la esencia de tu marca y se adapte perfectamente a tus necesidades de negocio puede marcar la diferencia entre destacar o perderse en la multitud digital.</p><p>En Soraia entendemos que cada proyecto es único, por eso trabajamos estrechamente con nuestros clientes para desarrollar soluciones web personalizadas que cumplan con sus objetivos específicos.</p>"
   }
 ]

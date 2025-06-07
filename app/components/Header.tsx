@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import { useState, useEffect, useRef } from "react";
 import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "~/i18n/context";
@@ -11,9 +11,11 @@ export default function Header({ activeSection }: HeaderProps) {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [fixed, setFixed] = useState(false);
-  // Estado para controlar el menú móvil
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const location = useLocation();
+  
+  // Comprobar si estamos en la landing page o no
+  const isLandingPage = location.pathname === "/";
   // Guardamos una referencia al elemento header 
   const headerRef = useRef<HTMLDivElement>(null);
   // Guardamos la altura para el espacio de reemplazo
@@ -74,13 +76,17 @@ export default function Header({ activeSection }: HeaderProps) {
     };
   }, []);
 
-  // Cerrar el menú móvil cuando se hace clic en un enlace
+  // Actualización de la función handleNavClick para manejar navegación desde cualquier página
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-
     // Cerrar el menú móvil si está abierto
     setMobileMenuOpen(false);
 
+    // Si no estamos en la landing page, no cancelamos el evento de navegación
+    // para permitir que el navegador nos lleve a /#seccion
+    if (!isLandingPage) return;
+    
+    // Solo ejecutamos la lógica de scroll si estamos en la landing page
+    e.preventDefault();
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
@@ -104,8 +110,8 @@ export default function Header({ activeSection }: HeaderProps) {
     { id: 'services', label: t('navbar.services') },
     { id: 'why-soraia', label: t('navbar.whySoraia') },
     { id: 'contact', label: t('navbar.contact') },
-    { id: 'blog', label: 'Blog', href: '/blog' },
-    { id: 'servicios', label: t('navbar.catalog'), href: '/servicios' }
+    { id: 'servicios', label: t('navbar.catalog'), href: '/servicios' },
+    { id: 'blog', label: 'Blog', href: '/blog' }  // Añadido el enlace al blog
   ];
 
   return (
@@ -127,9 +133,10 @@ export default function Header({ activeSection }: HeaderProps) {
             }`}
         >
           <div className="flex items-center">
-            <span className="text-2xl md:text-3xl mx-10 text-white my-3 sm:my-4">
+            {/* Convertir el logo en un enlace a la página de inicio */}
+            <Link to="/" className="text-2xl md:text-3xl mx-10 text-white my-3 sm:my-4 hover:text-soraia-primary transition-colors">
               Soraia
-            </span>
+            </Link>
           </div>
 
           <div>
@@ -148,9 +155,9 @@ export default function Header({ activeSection }: HeaderProps) {
                     {item.label}
                   </Link>
                 ) : (
-                  <a
+                  <Link
                     key={item.id}
-                    href={`#${item.id}`}
+                    to={`/#${item.id}`}
                     onClick={(e) => handleNavClick(e, item.id)}
                     className={`transition-colors relative ${activeSection === item.id
                       ? "text-soraia-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-soraia-primary"
@@ -158,7 +165,7 @@ export default function Header({ activeSection }: HeaderProps) {
                       }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 )
               ))}
 
@@ -218,9 +225,9 @@ export default function Header({ activeSection }: HeaderProps) {
                       {item.label}
                     </Link>
                   ) : (
-                    <a
+                    <Link
                       key={item.id}
-                      href={`#${item.id}`}
+                      to={`/#${item.id}`}
                       onClick={(e) => handleNavClick(e, item.id)}
                       className={`block py-2 px-4 rounded-md transition-colors ${activeSection === item.id
                         ? "bg-soraia-primary/20 text-soraia-primary font-bold"
@@ -228,7 +235,7 @@ export default function Header({ activeSection }: HeaderProps) {
                         }`}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )
                 ))}
               </nav>

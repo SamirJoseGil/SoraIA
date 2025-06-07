@@ -65,7 +65,7 @@ export default function ServiciosPage() {
 
                 {/* Services Header */}
                 <div className="container mx-auto px-4 mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                    <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 p-2 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
                         {t('servicesPage.title')}
                     </h1>
                     <p className="text-lg text-center text-gray-300 max-w-3xl mx-auto">

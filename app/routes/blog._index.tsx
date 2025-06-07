@@ -8,6 +8,7 @@ import BlogHeader from "~/components/blog/BlogHeader";
 import BlogCard from "~/components/blog/BlogCard";
 import CategoryList from "~/components/blog/CategoryList";
 import SearchBar from "~/components/blog/SearchBar";
+import FeaturedBanner from "~/components/blog/FeaturedBanner";
 import { extractCategories, filterPosts, sortPostsByDate } from "~/utils/blog-utils";
 import type { BlogPost } from "~/types/blog";
 import blogData from "~/data/blog.json";
@@ -55,14 +56,29 @@ export default function BlogIndex() {
     setSearchTerm(searchParams.get("search"));
   }, [searchParams]);
 
+  // Encuentra el artículo destacado por su slug
+  const featuredPost = posts.find(post => post.slug === "desarrollo-web-personalizado-2025");
+
   return (
     <div className="min-h-screen bg-soraia-light flex flex-col">
       <Header activeSection="blog" />
       
       <main className="flex-grow">
-        <BlogHeader />
+        <BlogHeader 
+          title="Blog de Soraia" 
+          subtitle="Noticias, guías y recursos sobre desarrollo web y tecnología" 
+        />
         
         <div className="container mx-auto px-4 py-12">
+          {/* Banner destacado */}
+          {featuredPost && (
+            <FeaturedBanner
+              title="👉 5 razones para invertir en desarrollo web personalizado en 2025"
+              subtitle="Una guía clara para emprendedores y empresas que quieren destacar en lo digital."
+              link={`/blog/${featuredPost.slug}`}
+            />
+          )}
+          
           {/* Búsqueda y filtros */}
           <div className="mb-12">
             <SearchBar searchTerm={searchTerm} />
