@@ -194,7 +194,15 @@ export default function Header({ activeSection }: HeaderProps) {
 
         {/* Menú móvil desplegable */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-800/90 shadow-lg rounded-b-lg z-50 transition-all duration-300 transform animate-fade-in backdrop-blur-md border border-gray-700/50">
+          <div 
+            className={`md:hidden ${fixed ? 'fixed' : 'absolute'} 
+            top-[var(--header-height)] left-0 right-0 bg-gray-800/95 shadow-lg rounded-b-lg z-[1000] 
+            transition-all duration-300 transform animate-fade-in backdrop-blur-md 
+            border border-gray-700/50 max-h-[80vh] overflow-y-auto`}
+            style={{ 
+              '--header-height': `${headerHeight}px` 
+            } as React.CSSProperties}
+          >
             <div className="container mx-auto px-4 py-3">
               <nav className="flex flex-col space-y-3">
                 {navLinks.map(item => (
@@ -227,7 +235,7 @@ export default function Header({ activeSection }: HeaderProps) {
             </div>
           </div>
         )}
-      </header >
+      </header>
     </>
   );
 }
