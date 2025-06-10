@@ -80,7 +80,7 @@ export default function Because() {
                     ></div>
 
                     <h2
-                        className={`text-3xl md:text-4xl font-bold mb-6 text-center text-white transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
+                        className={`section-title transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
                         {t('because.title')}

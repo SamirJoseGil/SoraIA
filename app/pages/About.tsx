@@ -70,7 +70,7 @@ export default function About() {
                     ></div>
 
                     <h2
-                        className={`text-3xl md:text-4xl font-bold mb-6 text-center text-white transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
+                        className={`section-title transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
                         {t('about.title')}
@@ -102,21 +102,27 @@ export default function About() {
                         style={{ transitionDelay: '1000ms' }}
                     >
                         {/* Service 1 */}
-                        <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-xl border border-gray-700/30 transition-all duration-300 hover:bg-gray-800/50 hover:transform hover:scale-105">
-                            <h3 className="text-xl font-bold text-white mb-4">{t('about.item1.title')}</h3>
-                            <p className="text-soraia-dark">{t('about.item1.description')}</p>
+                        <div className="about-card">
+                            <div className="about-card-content">
+                                <h3 className="text-xl font-bold text-white mb-4">{t('about.item1.title')}</h3>
+                                <p className="text-soraia-dark">{t('about.item1.description')}</p>
+                            </div>
                         </div>
 
                         {/* Service 2 */}
-                        <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-xl border border-gray-700/30 transition-all duration-300 hover:bg-gray-800/50 hover:transform hover:scale-105">
-                            <h3 className="text-xl font-bold text-white mb-4">{t('about.item2.title')}</h3>
-                            <p className="text-soraia-dark">{t('about.item2.description')}</p>
+                        <div className="about-card">
+                            <div className="about-card-content">
+                                <h3 className="text-xl font-bold text-white mb-4">{t('about.item2.title')}</h3>
+                                <p className="text-soraia-dark">{t('about.item2.description')}</p>
+                            </div>
                         </div>
 
                         {/* Service 3 */}
-                        <div className="bg-gray-800/30 backdrop-blur-sm p-8 rounded-xl border border-gray-700/30 transition-all duration-300 hover:bg-gray-800/50 hover:transform hover:scale-105">
-                            <h3 className="text-xl font-bold text-white mb-4">{t('about.item3.title')}</h3>
-                            <p className="text-soraia-dark">{t('about.item3.description')}</p>
+                        <div className="about-card">
+                            <div className="about-card-content">
+                                <h3 className="text-xl font-bold text-white mb-4">{t('about.item3.title')}</h3>
+                                <p className="text-soraia-dark">{t('about.item3.description')}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -60,7 +60,7 @@ export default function Hero() {
                         ></div>
 
                         <h1
-                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform gradient-title ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '400ms' }}
                         >
                             {t('hero.title')}
@@ -73,7 +73,7 @@ export default function Hero() {
                         ></div>
 
                         <p
-                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-3xl mx-auto leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-3xl mx-auto leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 text-left md:text-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '800ms' }}
                         >
                             {t('hero.subtitle')}

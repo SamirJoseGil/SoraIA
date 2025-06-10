@@ -65,7 +65,7 @@ export default function ServiciosPage() {
 
                 {/* Services Header */}
                 <div className="container mx-auto px-4 mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold text-center mb-4 p-2 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                    <h1 className="section-title">
                         {t('servicesPage.title')}
                     </h1>
                     <p className="text-lg text-center text-gray-300 max-w-3xl mx-auto">
@@ -148,7 +148,7 @@ export default function ServiciosPage() {
 
                 {/* Additional services section */}
                 <div className="container mx-auto px-4 mt-16">
-                    <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                    <h2 className="section-title">
                         {t('services.additional.title')}
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

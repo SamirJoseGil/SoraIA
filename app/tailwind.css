@@ -30,19 +30,19 @@ body {
   }
 
   .animate-float {
-    animation: float 10s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
 
   .animate-float-delay {
-    animation: float-delay 12s ease-in-out infinite;
+    animation: float-delay 10s ease-in-out infinite;
   }
 
   .animate-float-reverse {
-    animation: float-reverse 14s ease-in-out infinite;
+    animation: float-reverse 12s ease-in-out infinite;
   }
 
   .animate-float-slow {
-    animation: float-slow 16s ease-in-out infinite;
+    animation: float-slow 14s ease-in-out infinite;
   }
 
   .animate-ping {
@@ -55,6 +55,10 @@ body {
 
   .animate-light-sweep {
     animation: lightSweep 3s ease-in-out infinite;
+  }
+
+  .animate-button-glow {
+    animation: buttonGlow 2s ease-in-out infinite;
   }
 }
 
@@ -105,7 +109,6 @@ body {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 0.3;
@@ -178,7 +181,6 @@ body {
 }
 
 @keyframes ping {
-
   75%,
   100% {
     transform: scale(2);
@@ -187,7 +189,6 @@ body {
 }
 
 @keyframes bounce {
-
   0%,
   100% {
     transform: translateY(-25%);
@@ -214,9 +215,23 @@ body {
   }
 }
 
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
 /* Custom classes for sections */
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-white;
+  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-white bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text;
 }
 
 .section-subtitle {
@@ -225,6 +240,38 @@ body {
 
 .card {
   @apply bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 text-soraia-dark;
+}
+
+/* Gradiente de texto para títulos destacados */
+.gradient-title {
+  @apply bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text;
+}
+
+/* Nueva clase para cards de About con fondo gradiente */
+.about-card {
+  @apply relative overflow-hidden bg-gray-800/30 backdrop-blur-sm p-8 rounded-xl border border-gray-700/30 transition-all duration-300 hover:bg-gray-800/50 hover:transform hover:scale-105;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%);
+  border-radius: inherit;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.about-card:hover::before {
+  opacity: 0.5;
+}
+
+.about-card-content {
+  @apply relative z-10;
 }
 
 /* Estilos personalizados para el contenido del blog */
