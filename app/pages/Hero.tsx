@@ -42,7 +42,7 @@ export default function Hero() {
     }, [heroIsVisible]);
 
     return (
-        <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden">
+        <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-transparent">
             {/* Animated background circles */}
             <CirclesBackground />
 
@@ -53,44 +53,34 @@ export default function Hero() {
                 <div className="flex flex-col items-center text-center">
                     {/* Content - Centered */}
                     <div className="w-full max-w-4xl mx-auto">
-                        {/* Accent line above heading - centered */}
-                        <div
-                            className={`w-24 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent rounded-full mx-auto transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
-                            style={{ transitionDelay: '200ms' }}
-                        ></div>
-
                         <h1
-                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform gradient-title text-left md:text-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform gradient-title text-left ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '400ms' }}
                         >
                             {t('hero.title')}
                         </h1>
 
-                        {/* Animated underline - centered */}
-                        <div
-                            className={`w-32 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mb-8 rounded-full animate-pulse mx-auto transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-                            style={{ transitionDelay: '600ms' }}
-                        ></div>
-
                         <p
-                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-3xl mx-auto leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 text-left md:text-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-lg md:text-lg mb-12 text-soraia-dark max-w-3xl leading-relaxed backdrop-blur-sm rounded-xl transition-all duration-1000 text-left ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '800ms' }}
                         >
                             {t('hero.subtitle')}
                         </p>
 
                         {/* Centered CTA button with animation */}
-                        <a
-                            href="#contact"
-                            className={`relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-1000 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                            style={{ transitionDelay: '1000ms' }}
-                        >
-                            <span className="relative z-10">{t('hero.ctaButton')}</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                            <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
-                        </a>
+                        <div className="text-left">
+                            <a
+                                href="#contact"
+                                className={`relative overflow-hidden group bg-soraia-primary text-soraia-light px-10 py-4 rounded-full font-bold transition-all duration-1000 hover:shadow-lg hover:shadow-soraia-primary/30 transform hover:-translate-y-1 inline-flex items-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                style={{ transitionDelay: '1000ms' }}
+                            >
+                                <span className="relative z-10">{t('hero.ctaButton')}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                                <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

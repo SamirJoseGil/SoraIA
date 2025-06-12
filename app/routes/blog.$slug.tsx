@@ -65,7 +65,7 @@ export default function BlogPost() {
       : `/images/blog/${post.coverImage}`;
 
   return (
-    <div className="min-h-screen bg-soraia-light flex flex-col">
+    <div className="min-h-screen landing-gradient-bg flex flex-col">
       <Header activeSection="blog" />
       
       <main className="flex-grow">

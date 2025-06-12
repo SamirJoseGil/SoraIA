@@ -18,7 +18,7 @@ export default function FeaturedBanner({ link }: FeaturedBannerProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Fondo con gradiente y efecto de movimiento */}
-      <div className={`absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 transition-transform duration-3000 ease-in-out ${isHovered ? 'scale-110' : 'scale-100'}`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-r from-indigo-800 via-indigo-600 to-purple-600 transition-transform duration-3000 ease-in-out ${isHovered ? 'scale-110' : 'scale-100'}`}></div>
       
       {/* Overlay con patrón */}
       <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTRtMC0xMHYtOGgtNDBoNDBWMzAiLz48L2c+PC9nPjwvc3ZnPg==')]"></div>
@@ -42,9 +42,6 @@ export default function FeaturedBanner({ link }: FeaturedBannerProps) {
           {/* Subtítulo con animación de aparición */}
           <p className="text-white/80 text-sm md:text-base italic relative overflow-hidden">
             "{t('blog.featuredPost.subtitle')}"
-            
-            {/* Línea decorativa */}
-            <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-white/40 transition-all duration-700 ${isHovered ? 'w-full' : ''}`}></span>
           </p>
         </div>
         

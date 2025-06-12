@@ -7,15 +7,16 @@ body {
   @apply bg-soraia-light text-soraia-dark scroll-smooth;
 }
 
-/* Clase para el fondo degradado principal de la landing - Invertido */
+/* Clase para el fondo degradado principal de la landing - Más suave */
 .landing-gradient-bg {
   background: linear-gradient(
     to bottom,
     #000000 0%,  /* negro puro */
-    #0f0f23 25%,  /* casi negro con tinte azul */
-    #1e1b4b 50%,  /* indigo-950 */
-    #312e81 75%,  /* indigo-900 */
-    #3a75b0 100%  /* azul soraia */
+    #0f0f23 20%,  /* casi negro con tinte azul */
+    #0f1035 40%,  /* indigo-950 aún más oscuro */
+    #141240 60%,  /* indigo-900 muy oscuro */
+    #1a1a42 80%,  /* indigo-800 muy oscuro */
+    #000000 100%  /* azul soraia muy oscuro */
   );
   min-height: 100vh;
 }
@@ -249,7 +250,7 @@ body {
 
 /* Custom classes for sections */
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-white bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text;
+  @apply text-3xl md:text-4xl font-bold mb-6 text-center text-white bg-gradient-to-r from-blue-600 to-pink-600 text-transparent bg-clip-text;
 }
 
 .section-subtitle {
@@ -262,7 +263,7 @@ body {
 
 /* Gradiente de texto para títulos destacados */
 .gradient-title {
-  @apply bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text;
+  @apply bg-gradient-to-r from-blue-600 to-pink-600 text-transparent bg-clip-text;
 }
 
 /* Nueva clase para cards de About con fondo gradiente */
@@ -277,7 +278,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(67, 56, 202, 0.1) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(67, 56, 202, 0.1) 100%);
   border-radius: inherit;
   opacity: 0.3;
   transition: opacity 0.3s ease;
@@ -297,7 +298,7 @@ body {
   font-size: 1.75rem;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
-  color: theme('colors.soraia.primary');
+  color: #60a5fa; /* Azul más claro para mejor contraste */
   font-weight: 700;
 }
 
@@ -305,7 +306,7 @@ body {
   font-size: 1.375rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: theme('colors.soraia.primary');
+  color: #60a5fa; /* Azul más claro para mejor contraste */
   font-weight: 600;
 }
 
@@ -326,7 +327,7 @@ body {
 }
 
 .prose a {
-  color: theme('colors.soraia.accent');
+  color: #374151; /* Using the actual hex value for soraia accent */
   text-decoration: none;
 }
 
@@ -340,7 +341,7 @@ body {
 }
 
 .prose blockquote {
-  border-left: 4px solid theme('colors.soraia.primary');
+  border-left: 4px solid #60a5fa; /* Azul más claro para mejor contraste */
   padding-left: 1rem;
   font-style: italic;
   margin: 1.5rem 0;
@@ -351,10 +352,7 @@ body {
   margin-top: 1.5rem;
 }
 
-/* Footer con efecto blur - Ajustado para el nuevo gradiente */
-.footer-blur {
-  background: rgba(58, 117, 176, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Footer integrado sin blur - parte del gradiente principal */
+.footer-integrated {
+  background: transparent;
 }

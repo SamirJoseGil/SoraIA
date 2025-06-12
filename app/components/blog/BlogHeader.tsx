@@ -17,7 +17,7 @@ export default function BlogHeader({
   const { t } = useLanguage();
   
   return (
-    <div className="pt-20 pb-4">
+    <div className="pt-20 pb-4 bg-transparent">
       <div className="container mx-auto px-4">
         {showBackLink && (
           <div className="mb-8">

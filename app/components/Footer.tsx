@@ -30,12 +30,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden footer-blur py-12">
-      {/* Subtle background blur effect con más intensidad - Ajustado para azul */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        <div className="circle-lg absolute top-3/4 left-1/5 w-80 h-80 rounded-full bg-soraia-primary/30 animate-float-slow blur-3xl"></div>
-        <div className="circle-md absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-soraia-accent/25 animate-float blur-3xl"></div>
-        <div className="circle-sm absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-soraia-secondary/20 animate-float-reverse blur-2xl"></div>
+    <footer className="relative overflow-hidden bg-transparent py-12">
+      {/* Círculos de fondo con tonalidades más oscuras */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="circle-lg absolute top-3/4 left-1/5 w-80 h-80 rounded-full bg-indigo-900/40 animate-float-slow blur-3xl"></div>
+        <div className="circle-md absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-gray-900/30 animate-float blur-3xl"></div>
+        <div className="circle-sm absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-indigo-950/35 animate-float-reverse blur-2xl"></div>
       </div>
 
       <div className="container relative mx-auto px-4 z-10">
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Columna 2: Enlaces rápidos */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">{t('footer.navigation')}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-400">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -126,7 +126,7 @@ export default function Footer() {
 
           {/* Nueva columna 3: Información de contacto */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-soraia-primary">{t('footer.contact')}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-400">{t('footer.contact')}</h3>
             <div className="space-y-3">
               <div className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-soraia-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -43,7 +43,7 @@ export default function Services() {
     }, [servicesIsVisible]);
 
     return (
-        <section id="services" className="py-16 relative overflow-hidden">
+        <section id="services" className="py-16 relative overflow-hidden bg-transparent">
             {/* Background circles for the entire section */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
@@ -66,11 +66,6 @@ export default function Services() {
 
             <div ref={servicesRef} className="container relative mx-auto px-4 z-10 text-center">
                 <div className="text-center mb-12">
-                    <div
-                        className={`w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-6 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
-                        style={{ transitionDelay: '200ms' }}
-                    ></div>
-
                     <h2
                         className={`section-title transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
@@ -84,12 +79,6 @@ export default function Services() {
                     >
                         {t('services.subtitle')}
                     </p>
-
-                    {/* Animated divider */}
-                    <div
-                        className={`w-32 h-px bg-gradient-to-r from-transparent via-soraia-primary to-transparent mx-auto mb-12 transition-all duration-1000 ${animationsStarted ? 'opacity-60 scale-x-100' : 'opacity-0 scale-x-0'}`}
-                        style={{ transitionDelay: '800ms' }}
-                    ></div>
                 </div>
 
                 {/* Animated grid container */}
@@ -145,12 +134,6 @@ export default function Services() {
                         delay={animationsStarted ? 450 : 0}
                     />
                 </div>
-
-                {/* Decorative animated line at bottom */}
-                <div
-                    className={`w-20 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-16 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
-                    style={{ transitionDelay: '1200ms' }}
-                ></div>
 
                 <div className="flex justify-center mt-12">
                     <Link

@@ -62,7 +62,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-10 relative overflow-hidden">
+        <section id="contact" className="py-10 relative overflow-hidden bg-transparent">
             {/* Add animated background circles with different configuration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Unique circles positioned differently than other sections */}
@@ -96,11 +96,6 @@ export default function Contact() {
 
             <div ref={contactRef} className="container relative mx-auto px-4 z-10">
                 <div className="text-center mb-4">
-                    <div
-                        className={`w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-2 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
-                        style={{ transitionDelay: '200ms' }}
-                    ></div>
-
                     <h2
                         className={`section-title transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
@@ -114,11 +109,6 @@ export default function Contact() {
                     >
                         {t('contact.subtitle')}
                     </p>
-
-                    <div
-                        className={`w-24 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-6 rounded-full transition-all duration-1000 ${animationsStarted ? 'opacity-100 animate-pulse' : 'opacity-0'}`}
-                        style={{ transitionDelay: '800ms' }}
-                    ></div>
                 </div>
 
                 <div

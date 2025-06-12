@@ -41,7 +41,7 @@ export default function Because() {
     }, [whySoraiaIsVisible]);
 
     return (
-        <section id="why-soraia" className="py-20 relative overflow-hidden">
+        <section id="why-soraia" className="py-20 relative overflow-hidden bg-transparent">
             {/* Animated background circles with entrance animations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
@@ -74,11 +74,6 @@ export default function Because() {
 
             <div ref={whySoraiaRef} className="container relative mx-auto px-4 z-10">
                 <div className="text-center mb-16">
-                    <div
-                        className={`w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mb-6 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
-                        style={{ transitionDelay: '200ms' }}
-                    ></div>
-
                     <h2
                         className={`section-title transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
                         style={{ transitionDelay: '400ms' }}
@@ -92,11 +87,6 @@ export default function Because() {
                     >
                         {t('because.subtitle')}
                     </p>
-
-                    <div
-                        className={`w-24 h-1 bg-gradient-to-r from-soraia-accent to-soraia-primary mx-auto mt-6 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 animate-pulse' : 'opacity-0'}`}
-                        style={{ transitionDelay: '800ms' }}
-                    ></div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
@@ -188,12 +178,6 @@ export default function Because() {
                         </div>
                     </div>
                 </div>
-
-                {/* Final decorative element with animation */}
-                <div
-                    className={`w-20 h-1 bg-gradient-to-r from-soraia-primary to-soraia-accent mx-auto mt-16 rounded-full transition-all duration-1000 transform ${animationsStarted ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
-                    style={{ transitionDelay: '1100ms' }}
-                ></div>
             </div>
         </section>
     )
