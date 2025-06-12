@@ -68,23 +68,23 @@ export default function Index() {
   }, [heroIsVisible, aboutIsVisible, servicesIsVisible, whySoraiaIsVisible, contactIsVisible]);
 
   return (
-    <div className="bg-soraia-light">
+    <div className="landing-gradient-bg">
       {/* Header */}
       <Header activeSection={activeSection} />
 
-      {/* Hero Section - modern design without card */}
+      {/* Hero Section */}
       <Hero />
 
       {/* About Section */}
       <About />
 
-      {/* Services Section with new card style */}
+      {/* Services Section */}
       <Services />
 
-      {/* Por qué Soraia section with acrylic effect */}
+      {/* Por qué Soraia section */}
       <Because />
 
-      {/* Contact Section - with transparent background and animations */}
+      {/* Contact Section */}
       <Contact />
 
       {/* WhatsApp flotante */}

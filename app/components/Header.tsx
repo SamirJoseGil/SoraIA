@@ -117,19 +117,19 @@ export default function Header({ activeSection }: HeaderProps) {
   return (
     <>
       {/* Espacio de reemplazo cuando la navbar está fija */}
-      {fixed && <div className="bg-soraia-light" style={{ height: `${headerHeight}px` }} />}
+      {fixed && <div className="bg-black/5" style={{ height: `${headerHeight}px` }} />}
 
       <header
         ref={headerRef}
         className={`w-full z-50 py-2 transition-all duration-300 ${fixed
           ? "fixed top-0 left-0 right-0 flex justify-center bg-transparent"
-          : "bg-soraia-light"
+          : "bg-transparent"
           }`}
       >
         <div
           className={`container mx-auto px-4 rounded-full flex items-center justify-between ${scrolled
-            ? "bg-gray-800/80 border border-gray-700/50 backdrop-blur-md shadow-lg"
-            : "bg-soraia-light/90 backdrop-blur-sm"
+            ? "bg-indigo-900/30 border border-soraia-primary/30 backdrop-blur-md shadow-lg"
+            : "bg-transparent backdrop-blur-xl"
             }`}
         >
           <div className="flex items-center">
@@ -203,9 +203,9 @@ export default function Header({ activeSection }: HeaderProps) {
         {mobileMenuOpen && (
           <div 
             className={`md:hidden ${fixed ? 'fixed' : 'absolute'} 
-            top-[var(--header-height)] left-0 right-0 bg-gray-800/95 shadow-lg rounded-b-lg z-[1000] 
+            top-[var(--header-height)] left-0 right-0 bg-indigo-900/95 shadow-lg rounded-b-lg z-[1000] 
             transition-all duration-300 transform animate-fade-in backdrop-blur-md 
-            border border-gray-700/50 max-h-[80vh] overflow-y-auto`}
+            border border-soraia-primary/30 max-h-[80vh] overflow-y-auto`}
             style={{ 
               '--header-height': `${headerHeight}px` 
             } as React.CSSProperties}

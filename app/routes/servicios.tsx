@@ -48,7 +48,7 @@ export default function ServiciosPage() {
     }, []);
 
     return (
-        <div className="bg-soraia-light min-h-screen">
+        <div className="landing-gradient-bg min-h-screen">
             {/* Header */}
             <Header activeSection="servicios" />
 

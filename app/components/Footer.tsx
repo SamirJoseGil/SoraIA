@@ -30,11 +30,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-gray-900 py-12">
-      {/* Subtle background blur effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-50">
-        <div className="circle-lg absolute top-3/4 left-1/5 w-64 h-64 rounded-full bg-soraia-primary/5 animate-float-slow blur-3xl"></div>
-        <div className="circle-md absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full bg-soraia-primary/5 animate-float blur-3xl"></div>
+    <footer className="relative overflow-hidden footer-blur py-12">
+      {/* Subtle background blur effect con más intensidad - Ajustado para azul */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        <div className="circle-lg absolute top-3/4 left-1/5 w-80 h-80 rounded-full bg-soraia-primary/30 animate-float-slow blur-3xl"></div>
+        <div className="circle-md absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-soraia-accent/25 animate-float blur-3xl"></div>
+        <div className="circle-sm absolute top-1/2 left-1/2 w-48 h-48 rounded-full bg-soraia-secondary/20 animate-float-reverse blur-2xl"></div>
       </div>
 
       <div className="container relative mx-auto px-4 z-10">

@@ -62,7 +62,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-10 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-soraia-light">
+        <section id="contact" className="py-10 relative overflow-hidden">
             {/* Add animated background circles with different configuration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Unique circles positioned differently than other sections */}

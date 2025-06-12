@@ -41,7 +41,7 @@ export default function About() {
     }, [aboutIsVisible]);
 
     return (
-        <section id="about" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-soraia-light relative overflow-hidden">
+        <section id="about" className="py-20 relative overflow-hidden">
             {/* Background circles with different configuration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div

@@ -42,7 +42,7 @@ export default function Hero() {
     }, [heroIsVisible]);
 
     return (
-        <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-gradient-to-br from-soraia-light via-gray-800 to-gray-900">
+        <section id="home" className="min-h-screen flex flex-col justify-center relative overflow-hidden">
             {/* Animated background circles */}
             <CirclesBackground />
 
@@ -60,7 +60,7 @@ export default function Hero() {
                         ></div>
 
                         <h1
-                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform gradient-title ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                            className={`text-5xl md:text-7xl font-bold mb-6 text-white leading-tight transition-all duration-1000 transform gradient-title text-left md:text-center ${animationsStarted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                             style={{ transitionDelay: '400ms' }}
                         >
                             {t('hero.title')}

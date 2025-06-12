@@ -17,7 +17,7 @@ export default function BlogHeader({
   const { t } = useLanguage();
   
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-soraia-light pt-20 pb-4">
+    <div className="pt-20 pb-4">
       <div className="container mx-auto px-4">
         {showBackLink && (
           <div className="mb-8">

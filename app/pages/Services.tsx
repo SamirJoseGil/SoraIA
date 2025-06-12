@@ -43,7 +43,7 @@ export default function Services() {
     }, [servicesIsVisible]);
 
     return (
-        <section id="services" className="py-16 bg-gradient-to-br from-soraia-light via-gray-800 to-gray-900 relative overflow-hidden">
+        <section id="services" className="py-16 relative overflow-hidden">
             {/* Background circles for the entire section */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div

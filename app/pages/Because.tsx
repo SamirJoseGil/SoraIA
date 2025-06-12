@@ -41,7 +41,7 @@ export default function Because() {
     }, [whySoraiaIsVisible]);
 
     return (
-        <section id="why-soraia" className="py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-black">
+        <section id="why-soraia" className="py-20 relative overflow-hidden">
             {/* Animated background circles with entrance animations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div

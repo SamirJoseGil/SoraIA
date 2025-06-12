@@ -36,7 +36,7 @@ export default function BlogIndex() {
   const featuredPost = posts.find(post => post.slug === "desarrollo-web-personalizado-2025");
 
   return (
-    <div className="min-h-screen bg-soraia-light flex flex-col">
+    <div className="min-h-screen landing-gradient-bg flex flex-col">
       <Header activeSection="blog" />
       
       <main className="flex-grow">

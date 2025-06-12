@@ -49,6 +49,9 @@ export default {
           900: '#e7eff3',         // Light text
         },
       },
+      backgroundImage: {
+        'gradient-landing': 'linear-gradient(to bottom, #000000 0%, #0f0f23 25%, #1e1b4b 50%, #312e81 75%, #3a75b0 100%)',
+      },
     },
   },
   plugins: [],

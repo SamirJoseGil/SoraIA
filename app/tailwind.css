@@ -7,6 +7,24 @@ body {
   @apply bg-soraia-light text-soraia-dark scroll-smooth;
 }
 
+/* Clase para el fondo degradado principal de la landing - Invertido */
+.landing-gradient-bg {
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,  /* negro puro */
+    #0f0f23 25%,  /* casi negro con tinte azul */
+    #1e1b4b 50%,  /* indigo-950 */
+    #312e81 75%,  /* indigo-900 */
+    #3a75b0 100%  /* azul soraia */
+  );
+  min-height: 100vh;
+}
+
+/* Alternativa usando las nuevas utilidades de gradiente */
+.landing-bg-alt {
+  @apply bg-gradient-landing min-h-screen;
+}
+
 /* Custom animations */
 @layer utilities {
   .animate-fade-in {
@@ -331,4 +349,12 @@ body {
 /* Espaciado adicional entre secciones */
 .prose > * + * {
   margin-top: 1.5rem;
+}
+
+/* Footer con efecto blur - Ajustado para el nuevo gradiente */
+.footer-blur {
+  background: rgba(58, 117, 176, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
