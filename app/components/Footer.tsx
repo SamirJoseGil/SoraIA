@@ -43,9 +43,11 @@ export default function Footer() {
           {/* Columna 1: Logo e información */}
           <div>
             <div className="mb-4">
-              <span className="text-4xl text-white">
-                Soraia
-              </span>
+              <img 
+                src="images/LogoSoraia.png" 
+                alt="Soraia" 
+                className="h-24 w-auto"
+              />
             </div>
             <p className="text-soraia-dark/90">Transformamos ideas en software real.</p>
             <div className="mt-4 flex space-x-4">

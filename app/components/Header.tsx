@@ -134,8 +134,12 @@ export default function Header({ activeSection }: HeaderProps) {
         >
           <div className="flex items-center">
             {/* Convertir el logo en un enlace a la página de inicio */}
-            <Link to="/" className="text-2xl md:text-3xl mx-10 text-white my-3 sm:my-4 hover:text-soraia-primary transition-colors">
-              Soraia
+            <Link to="/" className="mx-14 hover:opacity-80 transition-opacity">
+              <img 
+                src="images/LogoSoraia.png" 
+                alt="Soraia" 
+                className="h-16 md:h-18 w-auto"
+              />
             </Link>
           </div>
 
