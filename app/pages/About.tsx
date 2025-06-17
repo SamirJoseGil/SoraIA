@@ -41,7 +41,7 @@ export default function About() {
     }, [aboutIsVisible]);
 
     return (
-        <section id="about" className="py-20 relative overflow-hidden bg-transparent">
+        <section id="about" className="py-20 relative overflow-hidden bg-transparent min-h-screen">
             {/* Background circles with different configuration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div

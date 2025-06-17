@@ -83,16 +83,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-
-            {/* Scroll indicator with delayed animation */}
-            <div
-                className={`absolute bottom-24 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${animationsStarted ? 'opacity-100 translate-y-0 animate-bounce' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: '1500ms' }}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-soraia-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </div>
         </section>
     )
 }

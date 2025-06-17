@@ -43,7 +43,7 @@ export default function Services() {
     }, [servicesIsVisible]);
 
     return (
-        <section id="services" className="py-16 relative overflow-hidden bg-transparent">
+        <section id="services" className="py-16 relative overflow-hidden bg-transparent min-h-screen">
             {/* Background circles for the entire section */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div
