@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Columna 2: Enlaces rápidos */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-400">{t('footer.navigation')}</h3>
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -128,7 +128,7 @@ export default function Footer() {
 
           {/* Nueva columna 3: Información de contacto */}
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-blue-400">{t('footer.contact')}</h3>
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text">{t('footer.contact')}</h3>
             <div className="space-y-3">
               <div className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-soraia-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

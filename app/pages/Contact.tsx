@@ -171,10 +171,9 @@ export default function Contact() {
                                 >
                                     <button
                                         type="submit"
-                                        className="relative overflow-hidden group w-full bg-soraia-primary/90 backdrop-blur-sm text-white font-bold py-3 px-6 rounded-lg hover:bg-soraia-secondary transition-colors duration-300 transform hover:scale-105"
+                                        className="relative overflow-hidden group w-full bg-gradient-to-r from-blue-600 to-purple-600 backdrop-blur-sm text-white font-bold py-3 px-6 rounded-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105"
                                     >
                                         <span className="relative z-10">{t('contact.submitButton')}</span>
-                                        <div className="absolute inset-0 w-0 bg-soraia-secondary group-hover:w-full transition-all duration-500 ease-out"></div>
                                     </button>
                                 </div>
 

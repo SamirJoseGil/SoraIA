@@ -55,7 +55,7 @@ export default function ServiciosPage() {
             <main className="pt-20 pb-16">
                 {/* Back button */}
                 <div className="container mx-auto px-4 mb-8">
-                    <Link to="/#services" className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white hover:bg-white/20 transition-all animate-button-glow">
+                    <Link to="/#services" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-md rounded-lg text-white hover:from-blue-600/30 hover:to-purple-600/30 transition-all animate-button-glow">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
                         </svg>
@@ -169,6 +169,18 @@ export default function ServiciosPage() {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="flex justify-center mt-12">
+                    <Link
+                        to="/servicios"
+                        className="px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-md rounded-lg text-white font-medium hover:from-blue-600/30 hover:to-purple-600/30 transition-all flex items-center group animate-button-glow"
+                    >
+                        <span>{t('services.viewMore')}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                    </Link>
                 </div>
             </main>
 
